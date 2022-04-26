@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 2
+lvs_ExtRunTimes 1643853468 1643853468
+lvs_ExtOutFile RUNDIR /home/wxn6660/cadence/EECS391/NAND2
+lvs_ExtOutFile RULES_FILE /home/wxn6660/cadence/EECS391/NAND2/_calibreLVS.rul_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST /home/wxn6660/cadence/EECS391/NAND2/NAND2.sp
+lvs_ExtOutFile EXTRACTION_REPORT NAND2.lvs.report.ext
