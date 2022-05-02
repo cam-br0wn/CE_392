@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 2
+lvs_ExtRunTimes 1646388279 1646388280
+lvs_ExtOutFile RUNDIR /home/ckb4640/391/EECS391/full_adder
+lvs_ExtOutFile RULES_FILE /home/ckb4640/391/EECS391/full_adder/_calibreLVS.rul_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST /home/ckb4640/391/EECS391/full_adder/full_adder.sp
+lvs_ExtOutFile EXTRACTION_REPORT full_adder.lvs.report.ext
