@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 2
+lvs_ExtRunTimes 1646392135 1646392136
+lvs_ExtOutFile RUNDIR /home/ckb4640/391/EECS391/4bit_RCA
+lvs_ExtOutFile RULES_FILE /home/ckb4640/391/EECS391/4bit_RCA/_calibreLVS.rul_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST /home/ckb4640/391/EECS391/4bit_RCA/4bit_RCA.sp
+lvs_ExtOutFile EXTRACTION_REPORT 4bit_RCA.lvs.report.ext

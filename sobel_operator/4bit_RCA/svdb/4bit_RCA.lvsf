@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_LvsOutFile RUNDIR /home/ckb4640/391/EECS391/4bit_RCA
+lvs_LvsfVersion 2
+lvs_LvsInputSummary {0 0 0}
+lvs_LvsComparisonSummary {3 0 0 0}
+lvs_LvsOutFile LVS_REPORT 4bit_RCA.lvs.report
+lvs_LvsOutFile SOURCE_NETLIST /home/ckb4640/391/EECS391/4bit_RCA/4bit_RCA.src.net
+lvs_LvsOutFile RULES_FILE /home/ckb4640/391/EECS391/4bit_RCA/_calibreLVS.rul_
+lvs_LvsRunTimes 1646392136 1646392136

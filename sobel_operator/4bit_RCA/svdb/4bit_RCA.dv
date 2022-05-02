@@ -1,0 +1,6 @@
+# CALIBRE-LVS DISCREPANCY VIEWER TCL FILE 
+# FILE: svdb/4bit_RCA.dv
+dv_start matched
+dv_cell {4bit_RCA} {4bit_RCA} matched
+dv_obj_count -transformed_nets {30 30} -transformed_inst {40 40} -transformed_port {15 15}
+dv_end
