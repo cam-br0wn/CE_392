@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_ExtfVersion 2
+lvs_ExtRunTimes 1645328042 1645328043
+lvs_ExtOutFile RUNDIR /home/nap8029/cadence/EECS391/DFF
+lvs_ExtOutFile RULES_FILE /home/nap8029/cadence/EECS391/DFF/_calibreLVS.rul_
+lvs_ExtInfoExtSummary {0 0 0 0 0 0 0 0 0 0}
+lvs_ExtInfoDfmSummary {0}
+lvs_ExtOutFile LAYOUT_NETLIST /home/nap8029/cadence/EECS391/DFF/DFF.sp
+lvs_ExtOutFile EXTRACTION_REPORT /home/nap8029/cadence/EECS391/DFF/DFF.lvs.report.ext

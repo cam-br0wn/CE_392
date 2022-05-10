@@ -1,0 +1,54 @@
+************************************************************************
+* auCdl Netlist:
+* 
+* Library Name:  EECS391
+* Top Cell Name: DFF
+* View Name:     schematic
+* Netlisted on:  Feb 19 21:34:02 2022
+************************************************************************
+
+*.EQUATION
+*.SCALE METER
+*.MEGA
+.PARAM
+
+
+
+************************************************************************
+* Library Name: EECS391
+* Cell Name:    DFF
+* View Name:    schematic
+************************************************************************
+
+.SUBCKT DFF D Q Q_bar clk gnd rst_bar vdd
+*.PININFO D:I clk:I rst_bar:I Q:O Q_bar:O gnd:B vdd:B
+MM27 net42 clk gnd gnd NMOS_VTG W=400n L=50n m=1
+MM23 net66 net42 gnd gnd NMOS_VTG W=800n L=50n m=1
+MM22 net54 net58 net66 gnd NMOS_VTG W=800n L=50n m=1
+MM21 Q net58 gnd gnd NMOS_VTG W=400n L=50n m=1
+MM18 Q_bar net54 gnd gnd NMOS_VTG W=400n L=50n m=1
+MM17 net68 rst_bar gnd gnd NMOS_VTG W=800n L=50n m=1
+MM16 net58 net54 net68 gnd NMOS_VTG W=800n L=50n m=1
+MM12 net54 clk net51 vdd NMOS_VTG W=400n L=50n m=1
+MM11 net69 net51 gnd gnd NMOS_VTG W=1.2u L=50n m=1
+MM10 net70 rst_bar net69 gnd NMOS_VTG W=1.2u L=50n m=1
+MM9 net44 net42 net70 gnd NMOS_VTG W=1.2u L=50n m=1
+MM5 net51 net44 gnd gnd NMOS_VTG W=400n L=50n m=1
+MM3 net38 net42 net44 gnd NMOS_VTG W=400n L=50n m=1
+MM0 net38 D gnd gnd NMOS_VTG W=400n L=50n m=1
+MM26 net42 clk vdd vdd PMOS_VTG W=600n L=50n m=1
+MM25 net67 clk vdd vdd PMOS_VTG W=1.2u L=50n m=1
+MM24 net54 net58 net67 vdd PMOS_VTG W=1.2u L=50n m=1
+MM20 Q net58 vdd vdd PMOS_VTG W=600n L=50n m=1
+MM19 Q_bar net54 vdd vdd PMOS_VTG W=600n L=50n m=1
+MM15 net58 rst_bar vdd vdd PMOS_VTG W=600n L=50n m=1
+MM14 net58 net54 vdd vdd PMOS_VTG W=600n L=50n m=1
+MM13 net54 net42 net51 gnd PMOS_VTG W=600n L=50n m=1
+MM8 net44 clk net48 vdd PMOS_VTG W=1.2u L=50n m=1
+MM7 net48 net51 vdd vdd PMOS_VTG W=1.2u L=50n m=1
+MM6 net48 rst_bar vdd vdd PMOS_VTG W=1.2u L=50n m=1
+MM4 net51 net44 vdd vdd PMOS_VTG W=600n L=50n m=1
+MM2 net38 clk net44 vdd PMOS_VTG W=600n L=50n m=1
+MM1 net38 D vdd vdd PMOS_VTG W=600n L=50n m=1
+.ENDS
+

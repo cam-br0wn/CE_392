@@ -1,0 +1,8 @@
+CADENCE IHNL11140
+$model
+EECS391/DFF/schematic DFF
+$endmodel
+$net
+$endnet
+$param
+$endparam

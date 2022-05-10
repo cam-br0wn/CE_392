@@ -1,0 +1,9 @@
+# Automagically generated file: Please do not edit!
+lvs_LvsOutFile RUNDIR /home/nap8029/cadence/EECS391/DFF
+lvs_LvsfVersion 2
+lvs_LvsInputSummary {0 0 0}
+lvs_LvsComparisonSummary {5 0 1 0}
+lvs_LvsOutFile LVS_REPORT /home/nap8029/cadence/EECS391/DFF/DFF.lvs.report
+lvs_LvsOutFile SOURCE_NETLIST /home/nap8029/cadence/EECS391/DFF/DFF.src.net
+lvs_LvsOutFile RULES_FILE /home/nap8029/cadence/EECS391/DFF/_calibreLVS.rul_
+lvs_LvsRunTimes 1645328043 1645328043
