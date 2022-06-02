@@ -1,0 +1,11 @@
+HEADER
+"PSFversion" "1.00"
+"M2n M10n M9n M8n M11n M3n" "NCSU_Devices_FreePDK45_NMOS_VTG_spectre"
+"I15n I20n I17n I19n I16n I18n" "inverter"
+"M5n M6n M1n M4n M7n M0n" "NCSU_Devices_FreePDK45_PMOS_VTG_spectre"
+"Dv" ":1v"
+"Qv" ":2v"
+"Q_barv" ":3v"
+"clkv" ":4v"
+"gndv" ":5v"
+"vddv" ":6v"

@@ -1,0 +1,18 @@
+    I15 (A\<7\> B\<7\> net11 net12 Gnd S\<7\> Vdd) full_adder
+    I14 (A\<3\> B\<3\> net7 net8 Gnd S\<3\> Vdd) full_adder
+    I13 (A\<0\> B\<0\> C_in net6 Gnd S\<0\> Vdd) full_adder
+    I12 (A\<1\> B\<1\> net6 net5 Gnd S\<1\> Vdd) full_adder
+    I11 (A\<2\> B\<2\> net5 net7 Gnd S\<2\> Vdd) full_adder
+    I10 (A\<4\> B\<4\> net8 net9 Gnd S\<4\> Vdd) full_adder
+    I9 (A\<5\> B\<5\> net9 net10 Gnd S\<5\> Vdd) full_adder
+    I8 (A\<6\> B\<6\> net10 net11 Gnd S\<6\> Vdd) full_adder
+    I7 (A\<11\> B\<11\> net15 net16 Gnd S\<11\> Vdd) full_adder
+    I6 (A\<8\> B\<8\> net12 net13 Gnd S\<8\> Vdd) full_adder
+    I5 (A\<9\> B\<9\> net13 net14 Gnd S\<9\> Vdd) full_adder
+    I4 (A\<10\> B\<10\> net14 net15 Gnd S\<10\> Vdd) full_adder
+    I3 (A\<12\> B\<12\> net16 net17 Gnd S\<12\> Vdd) full_adder
+    I2 (A\<13\> B\<13\> net17 net18 Gnd S\<13\> Vdd) full_adder
+    I1 (A\<14\> B\<14\> net18 net19 Gnd S\<14\> Vdd) full_adder
+    I0 (A\<15\> B\<15\> net19 C_Out Gnd S\<15\> Vdd) full_adder
+ends sobel_operator_16bit_RCA_schematic
+// End of subcircuit definition.

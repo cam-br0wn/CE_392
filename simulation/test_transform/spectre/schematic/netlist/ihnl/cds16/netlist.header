@@ -1,0 +1,6 @@
+
+// Library name: sobel_operator
+// Cell name: 8bit_one
+// View name: schematic
+subckt sobel_operator_8bit_one_schematic One\<7\> One\<6\> One\<5\> \
+        One\<4\> One\<3\> One\<2\> One\<1\> One\<0\>

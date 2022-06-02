@@ -1,0 +1,8 @@
+HEADER
+"PSFversion" "1.00"
+"I7n" "Transform"
+"I1n" "shift_reg"
+"I2n" "sample_data_input"
+"I3n" "clock"
+"I4n" "sobel_operator_8bit_one_schematic"
+"V1n V0n" "analogLib_vdc_spectre"

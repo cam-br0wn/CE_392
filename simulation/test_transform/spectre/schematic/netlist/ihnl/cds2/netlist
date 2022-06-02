@@ -1,0 +1,4 @@
+    I0 (A B net14 Gnd Vdd) NAND2
+    I1 (net14 Gnd Vdd Out) inverter
+ends AND2
+// End of subcircuit definition.

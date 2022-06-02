@@ -1,0 +1,7 @@
+HEADER
+"PSFversion" "1.00"
+"I0n" "Sobel"
+"I1n" "homogenous_data_input"
+"I2n" "clock"
+"V1n V0n" "analogLib_vdc_spectre"
+"I5n" "sobel_operator_8bit_one_schematic"

@@ -1,0 +1,6 @@
+CADENCE IHNL11144
+
+sobel_operator NAND2 schematic cds0
+sobel_operator inverter schematic cds1
+sobel_operator DFF_sync schematic cds2
+sobel_operator test_DFF_syn schematic cds3

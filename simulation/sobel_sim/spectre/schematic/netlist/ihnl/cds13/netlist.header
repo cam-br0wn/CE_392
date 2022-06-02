@@ -1,0 +1,8 @@
+
+// Library name: sobel_operator
+// Cell name: FinalSum_help
+// View name: schematic
+subckt FinalSum_help Gnd In\<15\> In\<14\> In\<13\> In\<12\> In\<11\> \
+        In\<10\> In\<9\> In\<8\> In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> \
+        In\<2\> In\<1\> In\<0\> Out\<7\> Out\<6\> Out\<5\> Out\<4\> \
+        Out\<3\> Out\<2\> Out\<1\> Out\<0\> S Vdd bit7

@@ -1,0 +1,6 @@
+
+// Library name: sobel_operator
+// Cell name: OR_array
+// View name: schematic
+subckt OR_array C_in Gnd In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> In\<2\> \
+        In\<1\> In\<0\> Out Vdd bit7

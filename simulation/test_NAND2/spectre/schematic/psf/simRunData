@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"sobel_operator\" \"test_NAND2\" \"schematic\" \"\")"
+"simulator" "spectre"
+"temperature" "27"
+"host" ""
+"date" "May  2 16:32:49 2022"
+"title" ""
+"analysisList" "()"
+END

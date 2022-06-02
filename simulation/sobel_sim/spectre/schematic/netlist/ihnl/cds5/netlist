@@ -1,0 +1,29 @@
+    I21 (S In\<7\> Gnd net57 Vdd) AND2
+    I20 (S In\<4\> Gnd net52 Vdd) AND2
+    I19 (In\<4\> net41 Gnd net59 Vdd) AND2
+    I18 (In\<6\> net41 Gnd Out8\<7\> Vdd) AND2
+    I17 (S In\<6\> Gnd net54 Vdd) AND2
+    I16 (In\<5\> net41 Gnd net58 Vdd) AND2
+    I15 (S In\<5\> Gnd net55 Vdd) AND2
+    I14 (In\<3\> net41 Gnd net56 Vdd) AND2
+    I13 (S In\<3\> Gnd net50 Vdd) AND2
+    I12 (In\<2\> net41 Gnd net53 Vdd) AND2
+    I11 (S In\<2\> Gnd net48 Vdd) AND2
+    I2 (In\<1\> net41 Gnd net51 Vdd) AND2
+    I1 (S In\<1\> Gnd Out8\<0\> Vdd) AND2
+    I0 (In\<0\> net41 Gnd net49 Vdd) AND2
+    I22 (S Gnd Vdd net41) inverter
+    I28 (net49 net48 Gnd Out8\<1\> Vdd) OR2
+    I27 (net51 net50 Gnd Out8\<2\> Vdd) OR2
+    I26 (net53 net52 Gnd Out8\<3\> Vdd) OR2
+    I25 (net56 net55 Gnd Out8\<4\> Vdd) OR2
+    I24 (net59 net54 Gnd Out8\<5\> Vdd) OR2
+    I23 (net58 net57 Gnd Out8\<6\> Vdd) OR2
+    I32 (Gnd Out8\<7\> Out8\<6\> Out8\<5\> Out8\<4\> Out8\<3\> Out8\<2\> \
+        Out8\<1\> Out8\<0\> Out\<15\> Out\<14\> Out\<13\> Out\<12\> \
+        Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> Out\<5\> \
+        Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd net041) \
+        sobel_operator_8bit_to_16bit_schematic
+    I33 (net41 In\<7\> net041 Gnd Vdd) NAND2
+ends Shifter
+// End of subcircuit definition.

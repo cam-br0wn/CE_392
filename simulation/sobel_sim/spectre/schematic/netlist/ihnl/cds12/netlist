@@ -1,0 +1,11 @@
+    I13 (net19 net18 Gnd net026 Vdd) OR2
+    I16 (In\<0\> Gnd Gnd bit7 Vdd) OR2
+    I15 (net026 C_in Gnd Out Vdd) OR2
+    I5 (In\<3\> In\<2\> Gnd net12 Vdd) OR2
+    I4 (net12 net11 Gnd net18 Vdd) OR2
+    I3 (In\<1\> Gnd Gnd net11 Vdd) OR2
+    I2 (net15 net14 Gnd net19 Vdd) OR2
+    I1 (In\<5\> In\<4\> Gnd net14 Vdd) OR2
+    I0 (In\<7\> In\<6\> Gnd net15 Vdd) OR2
+ends OR_array
+// End of subcircuit definition.

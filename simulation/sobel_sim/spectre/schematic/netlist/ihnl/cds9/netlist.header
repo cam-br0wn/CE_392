@@ -1,0 +1,10 @@
+
+// Library name: sobel_operator
+// Cell name: Minus2
+// View name: schematic
+subckt Minus2 C_Out Gnd In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> In\<2\> \
+        In\<1\> In\<0\> Out\<15\> Out\<14\> Out\<13\> Out\<12\> Out\<11\> \
+        Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> Out\<5\> Out\<4\> \
+        Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd one\<15\> one\<14\> \
+        one\<13\> one\<12\> one\<11\> one\<10\> one\<9\> one\<8\> one\<7\> \
+        one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> one\<1\> one\<0\>

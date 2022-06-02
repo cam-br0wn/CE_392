@@ -1,0 +1,16 @@
+
+// Library name: sobel_operator
+// Cell name: Transform
+// View name: schematic
+subckt Transform C_Out Gnd NegOne_A\<7\> NegOne_A\<6\> NegOne_A\<5\> \
+        NegOne_A\<4\> NegOne_A\<3\> NegOne_A\<2\> NegOne_A\<1\> \
+        NegOne_A\<0\> NegOne_B\<7\> NegOne_B\<6\> NegOne_B\<5\> \
+        NegOne_B\<4\> NegOne_B\<3\> NegOne_B\<2\> NegOne_B\<1\> \
+        NegOne_B\<0\> NegTwo\<7\> NegTwo\<6\> NegTwo\<5\> NegTwo\<4\> \
+        NegTwo\<3\> NegTwo\<2\> NegTwo\<1\> NegTwo\<0\> One_A\<7\> \
+        One_A\<6\> One_A\<5\> One_A\<4\> One_A\<3\> One_A\<2\> One_A\<1\> \
+        One_A\<0\> One_B\<7\> One_B\<6\> One_B\<5\> One_B\<4\> One_B\<3\> \
+        One_B\<2\> One_B\<1\> One_B\<0\> Out\<7\> Out\<6\> Out\<5\> \
+        Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Two\<7\> Two\<6\> \
+        Two\<5\> Two\<4\> Two\<3\> Two\<2\> Two\<1\> Two\<0\> Vdd one\<7\> \
+        one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> one\<1\> one\<0\>

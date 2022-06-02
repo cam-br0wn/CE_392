@@ -1,0 +1,4 @@
+CADENCE IHNL11142
+
+sobel_operator NAND2 schematic cds0
+sobel_operator test_NAND2 schematic cds1

@@ -1,0 +1,62 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "sobel_sim"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/home/ckb4640/CE_392/simulation/sobel_sim/spectre/schematic/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "sobel_operator/OR_array/schematic" "OR_array" )
+( "sobel_operator/Sobel/schematic" "Sobel" )
+( "sobel_operator/homogenous_data_input/schematic" "homogenous_data_input" )
+( "sobel_operator/sobel_sim/schematic" "sobel_sim" )
+( "sobel_operator/Minus2/schematic" "Minus2" )
+( "sobel_operator/FinalSum/schematic" "FinalSum" )
+( "sobel_operator/NAND2/schematic" "NAND2" )
+( "sobel_operator/AND2/schematic" "AND2" )
+( "sobel_operator/Shifter/schematic" "Shifter" )
+( "sobel_operator/8bit_reg/schematic" "sobel_operator_8bit_reg_schematic" )
+( "sobel_operator/XOR2/schematic" "XOR2" )
+( "sobel_operator/inverter/schematic" "inverter" )
+( "sobel_operator/8bit_one/schematic" "sobel_operator_8bit_one_schematic" )
+( "sobel_operator/full_adder/schematic" "full_adder" )
+( "sobel_operator/FinalSum_help/schematic" "FinalSum_help" )
+( "sobel_operator/16bit_RCA/schematic" "sobel_operator_16bit_RCA_schematic" )
+( "sobel_operator/8bit_to_16bit/schematic" "sobel_operator_8bit_to_16bit_schematic" )
+( "sobel_operator/clock/schematic" "clock" )
+( "sobel_operator/Transform/schematic" "Transform" )
+( "sobel_operator/OR2/schematic" "OR2" )
+( "sobel_operator/Minus1/schematic" "Minus1" )
+( "sobel_operator/DFF_sync/schematic" "DFF_sync" )
+( "sobel_operator/shift_reg/schematic" "shift_reg" )
+ )
+( "OR2" "ihnl/cds3/map" )
+( "Sobel" "ihnl/cds18/map" )
+( "FinalSum" "ihnl/cds14/map" )
+( "FinalSum_help" "ihnl/cds13/map" )
+( "sobel_sim" "ihnl/cds22/map" )
+( "sobel_operator_8bit_reg_schematic" "ihnl/cds16/map" )
+( "sobel_operator_16bit_RCA_schematic" "ihnl/cds7/map" )
+( "clock" "ihnl/cds20/map" )
+( "XOR2" "ihnl/cds10/map" )
+( "Minus1" "ihnl/cds8/map" )
+( "inverter" "ihnl/cds1/map" )
+( "OR_array" "ihnl/cds12/map" )
+( "Minus2" "ihnl/cds9/map" )
+( "AND2" "ihnl/cds2/map" )
+( "sobel_operator_8bit_one_schematic" "ihnl/cds21/map" )
+( "full_adder" "ihnl/cds6/map" )
+( "sobel_operator_8bit_to_16bit_schematic" "ihnl/cds4/map" )
+( "NAND2" "ihnl/cds0/map" )
+( "shift_reg" "ihnl/cds17/map" )
+( "DFF_sync" "ihnl/cds15/map" )
+( "homogenous_data_input" "ihnl/cds19/map" )
+( "Shifter" "ihnl/cds5/map" )
+( "Transform" "ihnl/cds11/map" )
+ )

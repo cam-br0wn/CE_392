@@ -1,0 +1,10 @@
+    I8 (In\<3\> S Gnd Out\<3\> Vdd) OR2
+    I7 (In\<2\> S Gnd Out\<2\> Vdd) OR2
+    I6 (S In\<0\> Gnd Out\<0\> Vdd) OR2
+    I5 (In\<1\> S Gnd Out\<1\> Vdd) OR2
+    I3 (In\<4\> S Gnd Out\<4\> Vdd) OR2
+    I2 (In\<5\> S Gnd Out\<5\> Vdd) OR2
+    I1 (In\<6\> S Gnd Out\<6\> Vdd) OR2
+    I4 (bit7 S Gnd Out\<7\> Vdd) OR2
+ends FinalSum_help
+// End of subcircuit definition.

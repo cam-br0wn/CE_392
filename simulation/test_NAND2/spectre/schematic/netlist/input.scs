@@ -1,0 +1,49 @@
+// Generated for: spectre
+// Generated on: May  2 16:32:49 2022
+// Design library name: sobel_operator
+// Design cell name: test_NAND2
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include"
+
+// Library name: sobel_operator
+// Cell name: NAND2
+// View name: schematic
+subckt NAND2 A B Y gnd vdd
+    M2 (Y A net16 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M3 (net16 B gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M0 (Y A vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+    M1 (Y B vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+ends NAND2
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: test_NAND2
+// View name: schematic
+I0 (A B Y net7 net6) NAND2
+V1 (B 0) vsource val1=1.1 val0=0 delay=10p rise=5p fall=5p period=10n \
+        type=bit data="0101" rptstart=1 rpttimes=0
+V0 (A 0) vsource val1=1.1 val0=0 delay=10p rise=5p fall=5p period=10n \
+        type=bit data="0011" rptstart=1 rpttimes=0
+V3 (net7 0) vsource dc=0 type=dc
+V2 (net6 0) vsource dc=1.1 type=dc
+simulatorOptions options psfversion="1.1.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=50n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save B A Y 
+saveOptions options save=allpub

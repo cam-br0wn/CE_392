@@ -1,0 +1,5 @@
+
+// Library name: sobel_operator
+// Cell name: NAND2
+// View name: schematic
+subckt NAND2 A B Y gnd vdd

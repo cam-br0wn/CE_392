@@ -1,0 +1,26 @@
+CADENCE IHNL11140
+$model
+sobel_operator/Shifter/schematic Shifter
+sobel_operator/8bit_RCA/schematic sobel_operator_8bit_RCA_schematic
+sobel_operator/Minus2/schematic Minus2
+sobel_operator/sample_data_input/schematic sample_data_input
+sobel_operator/full_adder/schematic full_adder
+sobel_operator/test_transform/schematic test_transform
+sobel_operator/NAND2/schematic NAND2
+sobel_operator/AND2/schematic AND2
+sobel_operator/XOR2/schematic XOR2
+sobel_operator/Transform/schematic Transform
+sobel_operator/shift_reg/schematic shift_reg
+sobel_operator/DFF_sync/schematic DFF_sync
+sobel_operator/clock/schematic clock
+sobel_operator/OR2/schematic OR2
+sobel_operator/8bit_reg/schematic sobel_operator_8bit_reg_schematic
+sobel_operator/Minus1/schematic Minus1
+sobel_operator/inverter/schematic inverter
+sobel_operator/8bit_one/schematic sobel_operator_8bit_one_schematic
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+$endparam

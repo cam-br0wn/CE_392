@@ -1,0 +1,10 @@
+CADENCE IHNL11148
+
+sobel_operator NAND2 schematic cds0
+sobel_operator inverter schematic cds1
+sobel_operator DFF_sync schematic cds2
+sobel_operator 8bit_reg schematic cds3
+sobel_operator shift_reg schematic cds4
+sobel_operator sample_data_input schematic cds5
+sobel_operator clock schematic cds6
+sobel_operator test_shift_reg schematic cds7

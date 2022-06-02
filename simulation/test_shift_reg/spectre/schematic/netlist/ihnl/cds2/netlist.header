@@ -1,0 +1,5 @@
+
+// Library name: sobel_operator
+// Cell name: DFF_sync
+// View name: schematic
+subckt DFF_sync D Q Q_bar clk gnd vdd

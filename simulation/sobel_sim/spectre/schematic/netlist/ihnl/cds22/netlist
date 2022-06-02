@@ -1,0 +1,22 @@
+
+// Library name: sobel_operator
+// Cell name: sobel_sim
+// View name: schematic
+I0 (bot\<7\> bot\<6\> bot\<5\> bot\<4\> bot\<3\> bot\<2\> bot\<1\> \
+        bot\<0\> clock net8 mid\<7\> mid\<6\> mid\<5\> mid\<4\> mid\<3\> \
+        mid\<2\> mid\<1\> mid\<0\> out\<7\> out\<6\> out\<5\> out\<4\> \
+        out\<3\> out\<2\> out\<1\> out\<0\> top\<7\> top\<6\> top\<5\> \
+        top\<4\> top\<3\> top\<2\> top\<1\> top\<0\> net4 net14\<0\> \
+        net14\<1\> net14\<2\> net14\<3\> net14\<4\> net14\<5\> net14\<6\> \
+        net14\<7\>) Sobel
+I1 (bot\<7\> bot\<6\> bot\<5\> bot\<4\> bot\<3\> bot\<2\> bot\<1\> \
+        bot\<0\> mid\<7\> mid\<6\> mid\<5\> mid\<4\> mid\<3\> mid\<2\> \
+        mid\<1\> mid\<0\> top\<7\> top\<6\> top\<5\> top\<4\> top\<3\> \
+        top\<2\> top\<1\> top\<0\>) homogenous_data_input
+I2 (clock) clock
+V1 (net8 0) vsource dc=0 type=dc
+V0 (net4 0) vsource dc=1.1 type=dc
+I5 (net14\<0\> net14\<1\> net14\<2\> net14\<3\> net14\<4\> net14\<5\> \
+        net14\<6\> net14\<7\> net16\<0\> net16\<1\> net16\<2\> net16\<3\> \
+        net16\<4\> net16\<5\> net16\<6\> net16\<7\>) \
+        sobel_operator_8bit_one_schematic

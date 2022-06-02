@@ -1,0 +1,5 @@
+
+// Library name: sobel_operator
+// Cell name: XOR2
+// View name: schematic
+subckt XOR2 A B Gnd Out Vdd

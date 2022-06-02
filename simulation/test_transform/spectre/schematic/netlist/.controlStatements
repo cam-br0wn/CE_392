@@ -1,0 +1,24 @@
+simulatorOptions options psfversion="1.1.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=400n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save net21\<0\> net21\<1\> net21\<2\> net21\<3\> net21\<4\> net21\<5\> \
+    net21\<6\> net21\<7\> net23\<0\> net23\<1\> net23\<2\> net23\<3\> \
+    net23\<4\> net23\<5\> net23\<6\> net23\<7\> net25\<0\> net25\<1\> \
+    net25\<2\> net25\<3\> net25\<4\> net25\<5\> net25\<6\> net25\<7\> \
+    net22\<0\> net22\<1\> net22\<2\> net22\<3\> net22\<4\> net22\<5\> \
+    net22\<6\> net22\<7\> net24\<0\> net24\<1\> net24\<2\> net24\<3\> \
+    net24\<4\> net24\<5\> net24\<6\> net24\<7\> net26\<0\> net26\<1\> \
+    net26\<2\> net26\<3\> net26\<4\> net26\<5\> net26\<6\> net26\<7\> \
+    Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> \
+    Out\<0\> net16 
+saveOptions options save=allpub

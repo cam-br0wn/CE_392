@@ -1,0 +1,12 @@
+
+// Library name: sobel_operator
+// Cell name: test_DFF_timing
+// View name: schematic
+I2 (q1 q2 net6 clk net3 net4) DFF_sync
+I1 (q0 q1 net7 clk net3 net4) DFF_sync
+I0 (d q0 net8 clk net3 net4) DFF_sync
+V0 (d 0) vsource val1=1.1 val0=0 delay=20p rise=10p fall=10p period=20n \
+        type=bit data="0010000000" rptstart=1 rpttimes=0
+I3 (clk) clock
+V2 (net3 0) vsource dc=0 type=dc
+V1 (net4 0) vsource dc=1.1 type=dc

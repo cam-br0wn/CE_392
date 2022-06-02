@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: May  2 16:32:49 2022
+// Design library name: sobel_operator
+// Design cell name: test_NAND2
+// Design view name: schematic
+simulator lang=spectre
+global 0

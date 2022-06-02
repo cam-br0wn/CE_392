@@ -1,0 +1,11 @@
+
+// Library name: sobel_operator
+// Cell name: Sobel
+// View name: schematic
+subckt Sobel Bot_L\<7\> Bot_L\<6\> Bot_L\<5\> Bot_L\<4\> Bot_L\<3\> \
+        Bot_L\<2\> Bot_L\<1\> Bot_L\<0\> Clk Gnd Mid_L\<7\> Mid_L\<6\> \
+        Mid_L\<5\> Mid_L\<4\> Mid_L\<3\> Mid_L\<2\> Mid_L\<1\> Mid_L\<0\> \
+        Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> \
+        Out\<0\> Top_L\<7\> Top_L\<6\> Top_L\<5\> Top_L\<4\> Top_L\<3\> \
+        Top_L\<2\> Top_L\<1\> Top_L\<0\> Vdd one\<7\> one\<6\> one\<5\> \
+        one\<4\> one\<3\> one\<2\> one\<1\> one\<0\>

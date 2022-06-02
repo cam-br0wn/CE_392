@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: May  2 22:18:20 2022
+// Design library name: sobel_operator
+// Design cell name: test_shift_reg
+// Design view name: schematic
+simulator lang=spectre
+global 0

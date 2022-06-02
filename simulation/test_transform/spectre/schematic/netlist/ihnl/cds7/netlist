@@ -1,0 +1,15 @@
+    I16 (Gnd C_Out Gnd Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> \
+        Out\<2\> Out\<1\> Out\<0\> Vdd In_Bar\<7\> In_Bar\<6\> In_Bar\<5\> \
+        In_Bar\<4\> In_Bar\<3\> In_Bar\<2\> In_Bar\<1\> In_Bar\<0\> \
+        one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> one\<1\> \
+        one\<0\>) sobel_operator_8bit_RCA_schematic
+    I8 (In\<0\> Gnd Vdd In_Bar\<0\>) inverter
+    I7 (In\<1\> Gnd Vdd In_Bar\<1\>) inverter
+    I6 (In\<2\> Gnd Vdd In_Bar\<2\>) inverter
+    I5 (In\<3\> Gnd Vdd In_Bar\<3\>) inverter
+    I4 (In\<4\> Gnd Vdd In_Bar\<4\>) inverter
+    I3 (In\<5\> Gnd Vdd In_Bar\<5\>) inverter
+    I2 (In\<6\> Gnd Vdd In_Bar\<6\>) inverter
+    I1 (In\<7\> Gnd Vdd In_Bar\<7\>) inverter
+ends Minus1
+// End of subcircuit definition.

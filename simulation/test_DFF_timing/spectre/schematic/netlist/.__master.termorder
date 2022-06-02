@@ -1,0 +1,4 @@
+"sobel_operator.clock.schematic.termorder" (("clk") ("clk"))
+"sobel_operator.DFF_sync.schematic.termorder" (("D" "Q" "Q_bar" "clk" "gnd" "vdd") ("D" "Q" "Q_bar" "clk" "gnd" "vdd"))
+"sobel_operator.inverter.schematic.termorder" (("A" "GND" "VDD" "Y") ("A" "GND" "VDD" "Y"))
+"sobel_operator.NAND2.schematic.termorder" (("A" "B" "Y" "gnd" "vdd") ("A" "B" "Y" "gnd" "vdd"))

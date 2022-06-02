@@ -1,0 +1,9 @@
+
+// Library name: sobel_operator
+// Cell name: 8bit_to_16bit
+// View name: schematic
+subckt sobel_operator_8bit_to_16bit_schematic Gnd In\<7\> In\<6\> In\<5\> \
+        In\<4\> In\<3\> In\<2\> In\<1\> In\<0\> Out\<15\> Out\<14\> \
+        Out\<13\> Out\<12\> Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> \
+        Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd \
+        bit8_bar

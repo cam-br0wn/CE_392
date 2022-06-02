@@ -1,0 +1,816 @@
+// Generated for: spectre
+// Generated on: Jun  1 20:19:10 2022
+// Design library name: sobel_operator
+// Design cell name: sobel_sim
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include"
+
+// Library name: sobel_operator
+// Cell name: NAND2
+// View name: schematic
+subckt NAND2 A B Y gnd vdd
+    M2 (Y A net16 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M3 (net16 B gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M0 (Y A vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+    M1 (Y B vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+ends NAND2
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: inverter
+// View name: schematic
+subckt inverter A GND VDD Y
+    M0 (Y A VDD VDD) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+    M1 (Y A GND GND) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 ps=610.0n \
+        pd=610.0n ld=105n ls=105n m=1
+ends inverter
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: AND2
+// View name: schematic
+subckt AND2 A B Gnd Out Vdd
+    I0 (A B net14 Gnd Vdd) NAND2
+    I1 (net14 Gnd Vdd Out) inverter
+ends AND2
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: OR2
+// View name: schematic
+subckt OR2 A B Gnd Out Vdd
+    M1 (net13 B Gnd Gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M0 (net13 A Gnd Gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M3 (net13 B net17 Vdd) PMOS_VTG w=1.2u l=50n as=1.26e-13 ad=1.26e-13 \
+        ps=1.41u pd=1.41u ld=105n ls=105n m=1
+    M2 (net17 A Vdd Vdd) PMOS_VTG w=1.2u l=50n as=1.26e-13 ad=1.26e-13 \
+        ps=1.41u pd=1.41u ld=105n ls=105n m=1
+    I0 (net13 Gnd Vdd Out) inverter
+ends OR2
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: 8bit_to_16bit
+// View name: schematic
+subckt sobel_operator_8bit_to_16bit_schematic Gnd In\<7\> In\<6\> In\<5\> \
+        In\<4\> In\<3\> In\<2\> In\<1\> In\<0\> Out\<15\> Out\<14\> \
+        Out\<13\> Out\<12\> Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> \
+        Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd \
+        bit8_bar
+    I24 (Vdd In\<7\> Gnd Out\<7\> Vdd) AND2
+    I14 (Vdd In\<3\> Gnd Out\<3\> Vdd) AND2
+    I13 (Vdd In\<0\> Gnd Out\<0\> Vdd) AND2
+    I12 (Vdd In\<1\> Gnd Out\<1\> Vdd) AND2
+    I11 (Vdd In\<2\> Gnd Out\<2\> Vdd) AND2
+    I10 (Vdd In\<4\> Gnd Out\<4\> Vdd) AND2
+    I9 (Vdd In\<5\> Gnd Out\<5\> Vdd) AND2
+    I8 (Vdd In\<6\> Gnd Out\<6\> Vdd) AND2
+    I23 (Vdd Gnd Vdd Out\<15\>) inverter
+    I22 (Vdd Gnd Vdd Out\<14\>) inverter
+    I21 (Vdd Gnd Vdd Out\<13\>) inverter
+    I20 (Vdd Gnd Vdd Out\<12\>) inverter
+    I19 (Vdd Gnd Vdd Out\<11\>) inverter
+    I18 (Vdd Gnd Vdd Out\<10\>) inverter
+    I17 (Vdd Gnd Vdd Out\<9\>) inverter
+    I16 (bit8_bar Gnd Vdd Out\<8\>) inverter
+ends sobel_operator_8bit_to_16bit_schematic
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: Shifter
+// View name: schematic
+subckt Shifter Gnd In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> In\<2\> In\<1\> \
+        In\<0\> Out\<15\> Out\<14\> Out\<13\> Out\<12\> Out\<11\> \
+        Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> Out\<5\> Out\<4\> \
+        Out\<3\> Out\<2\> Out\<1\> Out\<0\> S Vdd
+    I21 (S In\<7\> Gnd net57 Vdd) AND2
+    I20 (S In\<4\> Gnd net52 Vdd) AND2
+    I19 (In\<4\> net41 Gnd net59 Vdd) AND2
+    I18 (In\<6\> net41 Gnd Out8\<7\> Vdd) AND2
+    I17 (S In\<6\> Gnd net54 Vdd) AND2
+    I16 (In\<5\> net41 Gnd net58 Vdd) AND2
+    I15 (S In\<5\> Gnd net55 Vdd) AND2
+    I14 (In\<3\> net41 Gnd net56 Vdd) AND2
+    I13 (S In\<3\> Gnd net50 Vdd) AND2
+    I12 (In\<2\> net41 Gnd net53 Vdd) AND2
+    I11 (S In\<2\> Gnd net48 Vdd) AND2
+    I2 (In\<1\> net41 Gnd net51 Vdd) AND2
+    I1 (S In\<1\> Gnd Out8\<0\> Vdd) AND2
+    I0 (In\<0\> net41 Gnd net49 Vdd) AND2
+    I22 (S Gnd Vdd net41) inverter
+    I28 (net49 net48 Gnd Out8\<1\> Vdd) OR2
+    I27 (net51 net50 Gnd Out8\<2\> Vdd) OR2
+    I26 (net53 net52 Gnd Out8\<3\> Vdd) OR2
+    I25 (net56 net55 Gnd Out8\<4\> Vdd) OR2
+    I24 (net59 net54 Gnd Out8\<5\> Vdd) OR2
+    I23 (net58 net57 Gnd Out8\<6\> Vdd) OR2
+    I32 (Gnd Out8\<7\> Out8\<6\> Out8\<5\> Out8\<4\> Out8\<3\> Out8\<2\> \
+        Out8\<1\> Out8\<0\> Out\<15\> Out\<14\> Out\<13\> Out\<12\> \
+        Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> Out\<5\> \
+        Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd net041) \
+        sobel_operator_8bit_to_16bit_schematic
+    I33 (net41 In\<7\> net041 Gnd Vdd) NAND2
+ends Shifter
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: full_adder
+// View name: schematic
+subckt full_adder a b c_in c_out gnd sum vdd
+    M26 (c_out net43 gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M25 (sum net33 gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M24 (net40 a gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M23 (net41 b net40 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M22 (net33 c_in net41 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M21 (net31 c_in gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M20 (net31 b gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M19 (net31 a gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M18 (net42 a gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M17 (net43 b net42 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M16 (net20 b gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M15 (net43 c_in net20 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M14 (net20 a gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M13 (net33 net43 net31 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 \
+        ad=4.2e-14 ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M27 (c_out net43 vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M12 (sum net33 vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M11 (net33 net43 net32 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 \
+        ad=6.3e-14 ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M10 (net44 a vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M9 (net45 b net44 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M8 (net33 c_in net45 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M7 (net32 c_in vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M6 (net32 b vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M5 (net32 a vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M4 (net43 b net46 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M3 (net46 a vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M2 (net21 b vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M1 (net43 c_in net21 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M0 (net21 a vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+ends full_adder
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: 16bit_RCA
+// View name: schematic
+subckt sobel_operator_16bit_RCA_schematic A\<15\> A\<14\> A\<13\> A\<12\> \
+        A\<11\> A\<10\> A\<9\> A\<8\> A\<7\> A\<6\> A\<5\> A\<4\> A\<3\> \
+        A\<2\> A\<1\> A\<0\> B\<15\> B\<14\> B\<13\> B\<12\> B\<11\> \
+        B\<10\> B\<9\> B\<8\> B\<7\> B\<6\> B\<5\> B\<4\> B\<3\> B\<2\> \
+        B\<1\> B\<0\> C_Out C_in Gnd S\<15\> S\<14\> S\<13\> S\<12\> \
+        S\<11\> S\<10\> S\<9\> S\<8\> S\<7\> S\<6\> S\<5\> S\<4\> S\<3\> \
+        S\<2\> S\<1\> S\<0\> Vdd
+    I15 (A\<7\> B\<7\> net11 net12 Gnd S\<7\> Vdd) full_adder
+    I14 (A\<3\> B\<3\> net7 net8 Gnd S\<3\> Vdd) full_adder
+    I13 (A\<0\> B\<0\> C_in net6 Gnd S\<0\> Vdd) full_adder
+    I12 (A\<1\> B\<1\> net6 net5 Gnd S\<1\> Vdd) full_adder
+    I11 (A\<2\> B\<2\> net5 net7 Gnd S\<2\> Vdd) full_adder
+    I10 (A\<4\> B\<4\> net8 net9 Gnd S\<4\> Vdd) full_adder
+    I9 (A\<5\> B\<5\> net9 net10 Gnd S\<5\> Vdd) full_adder
+    I8 (A\<6\> B\<6\> net10 net11 Gnd S\<6\> Vdd) full_adder
+    I7 (A\<11\> B\<11\> net15 net16 Gnd S\<11\> Vdd) full_adder
+    I6 (A\<8\> B\<8\> net12 net13 Gnd S\<8\> Vdd) full_adder
+    I5 (A\<9\> B\<9\> net13 net14 Gnd S\<9\> Vdd) full_adder
+    I4 (A\<10\> B\<10\> net14 net15 Gnd S\<10\> Vdd) full_adder
+    I3 (A\<12\> B\<12\> net16 net17 Gnd S\<12\> Vdd) full_adder
+    I2 (A\<13\> B\<13\> net17 net18 Gnd S\<13\> Vdd) full_adder
+    I1 (A\<14\> B\<14\> net18 net19 Gnd S\<14\> Vdd) full_adder
+    I0 (A\<15\> B\<15\> net19 C_Out Gnd S\<15\> Vdd) full_adder
+ends sobel_operator_16bit_RCA_schematic
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: Minus1
+// View name: schematic
+subckt Minus1 C_Out Gnd In\<15\> In\<14\> In\<13\> In\<12\> In\<11\> \
+        In\<10\> In\<9\> In\<8\> In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> \
+        In\<2\> In\<1\> In\<0\> Out\<15\> Out\<14\> Out\<13\> Out\<12\> \
+        Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> Out\<5\> \
+        Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd one\<15\> \
+        one\<14\> one\<13\> one\<12\> one\<11\> one\<10\> one\<9\> \
+        one\<8\> one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> \
+        one\<1\> one\<0\>
+    I26 (In_Bar\<15\> In_Bar\<14\> In_Bar\<13\> In_Bar\<12\> In_Bar\<11\> \
+        In_Bar\<10\> In_Bar\<9\> In_Bar\<8\> In_Bar\<7\> In_Bar\<6\> \
+        In_Bar\<5\> In_Bar\<4\> In_Bar\<3\> In_Bar\<2\> In_Bar\<1\> \
+        In_Bar\<0\> one\<15\> one\<14\> one\<13\> one\<12\> one\<11\> \
+        one\<10\> one\<9\> one\<8\> one\<7\> one\<6\> one\<5\> one\<4\> \
+        one\<3\> one\<2\> one\<1\> one\<0\> C_Out Gnd Gnd Out\<15\> \
+        Out\<14\> Out\<13\> Out\<12\> Out\<11\> Out\<10\> Out\<9\> \
+        Out\<8\> Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> \
+        Out\<1\> Out\<0\> Vdd) sobel_operator_16bit_RCA_schematic
+    I24 (In\<15\> Gnd Vdd In_Bar\<15\>) inverter
+    I23 (In\<14\> Gnd Vdd In_Bar\<14\>) inverter
+    I22 (In\<13\> Gnd Vdd In_Bar\<13\>) inverter
+    I21 (In\<12\> Gnd Vdd In_Bar\<12\>) inverter
+    I20 (In\<11\> Gnd Vdd In_Bar\<11\>) inverter
+    I19 (In\<10\> Gnd Vdd In_Bar\<10\>) inverter
+    I18 (In\<9\> Gnd Vdd In_Bar\<9\>) inverter
+    I17 (In\<8\> Gnd Vdd In_Bar\<8\>) inverter
+    I8 (In\<0\> Gnd Vdd In_Bar\<0\>) inverter
+    I7 (In\<1\> Gnd Vdd In_Bar\<1\>) inverter
+    I6 (In\<2\> Gnd Vdd In_Bar\<2\>) inverter
+    I5 (In\<3\> Gnd Vdd In_Bar\<3\>) inverter
+    I4 (In\<4\> Gnd Vdd In_Bar\<4\>) inverter
+    I3 (In\<5\> Gnd Vdd In_Bar\<5\>) inverter
+    I2 (In\<6\> Gnd Vdd In_Bar\<6\>) inverter
+    I1 (In\<7\> Gnd Vdd In_Bar\<7\>) inverter
+ends Minus1
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: Minus2
+// View name: schematic
+subckt Minus2 C_Out Gnd In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> In\<2\> \
+        In\<1\> In\<0\> Out\<15\> Out\<14\> Out\<13\> Out\<12\> Out\<11\> \
+        Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> Out\<5\> Out\<4\> \
+        Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd one\<15\> one\<14\> \
+        one\<13\> one\<12\> one\<11\> one\<10\> one\<9\> one\<8\> one\<7\> \
+        one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> one\<1\> one\<0\>
+    I2 (C_Out Gnd net012\<0\> net012\<1\> net012\<2\> net012\<3\> \
+        net012\<4\> net012\<5\> net012\<6\> net012\<7\> net012\<8\> \
+        net012\<9\> net012\<10\> net012\<11\> net012\<12\> net012\<13\> \
+        net012\<14\> net012\<15\> Out\<15\> Out\<14\> Out\<13\> Out\<12\> \
+        Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> Out\<5\> \
+        Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd one\<15\> \
+        one\<14\> one\<13\> one\<12\> one\<11\> one\<10\> one\<9\> \
+        one\<8\> one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> \
+        one\<1\> one\<0\>) Minus1
+    I4 (Gnd In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> In\<2\> In\<1\> \
+        In\<0\> net012\<0\> net012\<1\> net012\<2\> net012\<3\> \
+        net012\<4\> net012\<5\> net012\<6\> net012\<7\> net012\<8\> \
+        net012\<9\> net012\<10\> net012\<11\> net012\<12\> net012\<13\> \
+        net012\<14\> net012\<15\> Gnd Vdd) Shifter
+ends Minus2
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: XOR2
+// View name: schematic
+subckt XOR2 A B Gnd Out Vdd
+    I0 (net15 net14 Gnd Out Vdd) AND2
+    I1 (A B Gnd net15 Vdd) OR2
+    I2 (A B net14 Gnd Vdd) NAND2
+ends XOR2
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: Transform
+// View name: schematic
+subckt Transform C_Out Gnd NegOne_A\<7\> NegOne_A\<6\> NegOne_A\<5\> \
+        NegOne_A\<4\> NegOne_A\<3\> NegOne_A\<2\> NegOne_A\<1\> \
+        NegOne_A\<0\> NegOne_B\<7\> NegOne_B\<6\> NegOne_B\<5\> \
+        NegOne_B\<4\> NegOne_B\<3\> NegOne_B\<2\> NegOne_B\<1\> \
+        NegOne_B\<0\> NegTwo\<7\> NegTwo\<6\> NegTwo\<5\> NegTwo\<4\> \
+        NegTwo\<3\> NegTwo\<2\> NegTwo\<1\> NegTwo\<0\> One_A\<7\> \
+        One_A\<6\> One_A\<5\> One_A\<4\> One_A\<3\> One_A\<2\> One_A\<1\> \
+        One_A\<0\> One_B\<7\> One_B\<6\> One_B\<5\> One_B\<4\> One_B\<3\> \
+        One_B\<2\> One_B\<1\> One_B\<0\> Out\<15\> Out\<14\> Out\<13\> \
+        Out\<12\> Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> Out\<6\> \
+        Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Two\<7\> \
+        Two\<6\> Two\<5\> Two\<4\> Two\<3\> Two\<2\> Two\<1\> Two\<0\> Vdd \
+        one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> one\<1\> \
+        one\<0\>
+    I0 (Gnd Two\<7\> Two\<6\> Two\<5\> Two\<4\> Two\<3\> Two\<2\> Two\<1\> \
+        Two\<0\> net078\<0\> net078\<1\> net078\<2\> net078\<3\> \
+        net078\<4\> net078\<5\> net078\<6\> net078\<7\> net078\<8\> \
+        net078\<9\> net078\<10\> net078\<11\> net078\<12\> net078\<13\> \
+        net078\<14\> net078\<15\> Gnd Vdd) Shifter
+    I1 (net040 Gnd NegTwo\<7\> NegTwo\<6\> NegTwo\<5\> NegTwo\<4\> \
+        NegTwo\<3\> NegTwo\<2\> NegTwo\<1\> NegTwo\<0\> net062\<0\> \
+        net062\<1\> net062\<2\> net062\<3\> net062\<4\> net062\<5\> \
+        net062\<6\> net062\<7\> net062\<8\> net062\<9\> net062\<10\> \
+        net062\<11\> net062\<12\> net062\<13\> net062\<14\> net062\<15\> \
+        Vdd net054\<0\> net054\<1\> net054\<2\> net054\<3\> net054\<4\> \
+        net054\<5\> net054\<6\> net054\<7\> net054\<8\> net054\<9\> \
+        net054\<10\> net054\<11\> net054\<12\> net054\<13\> net054\<14\> \
+        net054\<15\>) Minus2
+    I20 (net030 Gnd net075\<0\> net075\<1\> net075\<2\> net075\<3\> \
+        net075\<4\> net075\<5\> net075\<6\> net075\<7\> net075\<8\> \
+        net075\<9\> net075\<10\> net075\<11\> net075\<12\> net075\<13\> \
+        net075\<14\> net075\<15\> net074\<0\> net074\<1\> net074\<2\> \
+        net074\<3\> net074\<4\> net074\<5\> net074\<6\> net074\<7\> \
+        net074\<8\> net074\<9\> net074\<10\> net074\<11\> net074\<12\> \
+        net074\<13\> net074\<14\> net074\<15\> Vdd net054\<0\> net054\<1\> \
+        net054\<2\> net054\<3\> net054\<4\> net054\<5\> net054\<6\> \
+        net054\<7\> net054\<8\> net054\<9\> net054\<10\> net054\<11\> \
+        net054\<12\> net054\<13\> net054\<14\> net054\<15\>) Minus1
+    I21 (net59 Gnd net069\<0\> net069\<1\> net069\<2\> net069\<3\> \
+        net069\<4\> net069\<5\> net069\<6\> net069\<7\> net069\<8\> \
+        net069\<9\> net069\<10\> net069\<11\> net069\<12\> net069\<13\> \
+        net069\<14\> net069\<15\> net065\<0\> net065\<1\> net065\<2\> \
+        net065\<3\> net065\<4\> net065\<5\> net065\<6\> net065\<7\> \
+        net065\<8\> net065\<9\> net065\<10\> net065\<11\> net065\<12\> \
+        net065\<13\> net065\<14\> net065\<15\> Vdd net054\<0\> net054\<1\> \
+        net054\<2\> net054\<3\> net054\<4\> net054\<5\> net054\<6\> \
+        net054\<7\> net054\<8\> net054\<9\> net054\<10\> net054\<11\> \
+        net054\<12\> net054\<13\> net054\<14\> net054\<15\>) Minus1
+    I17 (net60 net44 Gnd net047 Vdd) XOR2
+    I18 (net40 net040 Gnd net046 Vdd) XOR2
+    I19 (net030 net59 Gnd net034 Vdd) XOR2
+    I31 (Gnd One_B\<7\> One_B\<6\> One_B\<5\> One_B\<4\> One_B\<3\> \
+        One_B\<2\> One_B\<1\> One_B\<0\> net089\<0\> net089\<1\> \
+        net089\<2\> net089\<3\> net089\<4\> net089\<5\> net089\<6\> \
+        net089\<7\> net089\<8\> net089\<9\> net089\<10\> net089\<11\> \
+        net089\<12\> net089\<13\> net089\<14\> net089\<15\> Vdd Vdd) \
+        sobel_operator_8bit_to_16bit_schematic
+    I30 (Gnd One_A\<7\> One_A\<6\> One_A\<5\> One_A\<4\> One_A\<3\> \
+        One_A\<2\> One_A\<1\> One_A\<0\> net063\<0\> net063\<1\> \
+        net063\<2\> net063\<3\> net063\<4\> net063\<5\> net063\<6\> \
+        net063\<7\> net063\<8\> net063\<9\> net063\<10\> net063\<11\> \
+        net063\<12\> net063\<13\> net063\<14\> net063\<15\> Vdd Vdd) \
+        sobel_operator_8bit_to_16bit_schematic
+    I24 (Gnd NegOne_A\<7\> NegOne_A\<6\> NegOne_A\<5\> NegOne_A\<4\> \
+        NegOne_A\<3\> NegOne_A\<2\> NegOne_A\<1\> NegOne_A\<0\> \
+        net075\<0\> net075\<1\> net075\<2\> net075\<3\> net075\<4\> \
+        net075\<5\> net075\<6\> net075\<7\> net075\<8\> net075\<9\> \
+        net075\<10\> net075\<11\> net075\<12\> net075\<13\> net075\<14\> \
+        net075\<15\> Vdd Vdd) sobel_operator_8bit_to_16bit_schematic
+    I23 (Gnd NegOne_B\<7\> NegOne_B\<6\> NegOne_B\<5\> NegOne_B\<4\> \
+        NegOne_B\<3\> NegOne_B\<2\> NegOne_B\<1\> NegOne_B\<0\> \
+        net069\<0\> net069\<1\> net069\<2\> net069\<3\> net069\<4\> \
+        net069\<5\> net069\<6\> net069\<7\> net069\<8\> net069\<9\> \
+        net069\<10\> net069\<11\> net069\<12\> net069\<13\> net069\<14\> \
+        net069\<15\> Vdd Vdd) sobel_operator_8bit_to_16bit_schematic
+    I22 (Gnd one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> \
+        one\<1\> one\<0\> net054\<0\> net054\<1\> net054\<2\> net054\<3\> \
+        net054\<4\> net054\<5\> net054\<6\> net054\<7\> net054\<8\> \
+        net054\<9\> net054\<10\> net054\<11\> net054\<12\> net054\<13\> \
+        net054\<14\> net054\<15\> Vdd Vdd) \
+        sobel_operator_8bit_to_16bit_schematic
+    I27 (net073\<0\> net073\<1\> net073\<2\> net073\<3\> net073\<4\> \
+        net073\<5\> net073\<6\> net073\<7\> net073\<8\> net073\<9\> \
+        net073\<10\> net073\<11\> net073\<12\> net073\<13\> net073\<14\> \
+        net073\<15\> net070\<0\> net070\<1\> net070\<2\> net070\<3\> \
+        net070\<4\> net070\<5\> net070\<6\> net070\<7\> net070\<8\> \
+        net070\<9\> net070\<10\> net070\<11\> net070\<12\> net070\<13\> \
+        net070\<14\> net070\<15\> C_Out net047 Gnd Out\<15\> Out\<14\> \
+        Out\<13\> Out\<12\> Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> \
+        Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> \
+        Vdd) sobel_operator_16bit_RCA_schematic
+    I25 (net067\<0\> net067\<1\> net067\<2\> net067\<3\> net067\<4\> \
+        net067\<5\> net067\<6\> net067\<7\> net067\<8\> net067\<9\> \
+        net067\<10\> net067\<11\> net067\<12\> net067\<13\> net067\<14\> \
+        net067\<15\> net062\<0\> net062\<1\> net062\<2\> net062\<3\> \
+        net062\<4\> net062\<5\> net062\<6\> net062\<7\> net062\<8\> \
+        net062\<9\> net062\<10\> net062\<11\> net062\<12\> net062\<13\> \
+        net062\<14\> net062\<15\> net44 net046 Gnd net070\<0\> net070\<1\> \
+        net070\<2\> net070\<3\> net070\<4\> net070\<5\> net070\<6\> \
+        net070\<7\> net070\<8\> net070\<9\> net070\<10\> net070\<11\> \
+        net070\<12\> net070\<13\> net070\<14\> net070\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+    I26 (net065\<0\> net065\<1\> net065\<2\> net065\<3\> net065\<4\> \
+        net065\<5\> net065\<6\> net065\<7\> net065\<8\> net065\<9\> \
+        net065\<10\> net065\<11\> net065\<12\> net065\<13\> net065\<14\> \
+        net065\<15\> net074\<0\> net074\<1\> net074\<2\> net074\<3\> \
+        net074\<4\> net074\<5\> net074\<6\> net074\<7\> net074\<8\> \
+        net074\<9\> net074\<10\> net074\<11\> net074\<12\> net074\<13\> \
+        net074\<14\> net074\<15\> net40 net034 Gnd net067\<0\> net067\<1\> \
+        net067\<2\> net067\<3\> net067\<4\> net067\<5\> net067\<6\> \
+        net067\<7\> net067\<8\> net067\<9\> net067\<10\> net067\<11\> \
+        net067\<12\> net067\<13\> net067\<14\> net067\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+    I29 (net077\<0\> net077\<1\> net077\<2\> net077\<3\> net077\<4\> \
+        net077\<5\> net077\<6\> net077\<7\> net077\<8\> net077\<9\> \
+        net077\<10\> net077\<11\> net077\<12\> net077\<13\> net077\<14\> \
+        net077\<15\> net078\<0\> net078\<1\> net078\<2\> net078\<3\> \
+        net078\<4\> net078\<5\> net078\<6\> net078\<7\> net078\<8\> \
+        net078\<9\> net078\<10\> net078\<11\> net078\<12\> net078\<13\> \
+        net078\<14\> net078\<15\> net60 net38 Gnd net073\<0\> net073\<1\> \
+        net073\<2\> net073\<3\> net073\<4\> net073\<5\> net073\<6\> \
+        net073\<7\> net073\<8\> net073\<9\> net073\<10\> net073\<11\> \
+        net073\<12\> net073\<13\> net073\<14\> net073\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+    I28 (net063\<0\> net063\<1\> net063\<2\> net063\<3\> net063\<4\> \
+        net063\<5\> net063\<6\> net063\<7\> net063\<8\> net063\<9\> \
+        net063\<10\> net063\<11\> net063\<12\> net063\<13\> net063\<14\> \
+        net063\<15\> net089\<0\> net089\<1\> net089\<2\> net089\<3\> \
+        net089\<4\> net089\<5\> net089\<6\> net089\<7\> net089\<8\> \
+        net089\<9\> net089\<10\> net089\<11\> net089\<12\> net089\<13\> \
+        net089\<14\> net089\<15\> net38 Gnd Gnd net077\<0\> net077\<1\> \
+        net077\<2\> net077\<3\> net077\<4\> net077\<5\> net077\<6\> \
+        net077\<7\> net077\<8\> net077\<9\> net077\<10\> net077\<11\> \
+        net077\<12\> net077\<13\> net077\<14\> net077\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+ends Transform
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: OR_array
+// View name: schematic
+subckt OR_array C_in Gnd In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> In\<2\> \
+        In\<1\> In\<0\> Out Vdd bit7
+    I13 (net19 net18 Gnd net026 Vdd) OR2
+    I16 (In\<0\> Gnd Gnd bit7 Vdd) OR2
+    I15 (net026 C_in Gnd Out Vdd) OR2
+    I5 (In\<3\> In\<2\> Gnd net12 Vdd) OR2
+    I4 (net12 net11 Gnd net18 Vdd) OR2
+    I3 (In\<1\> Gnd Gnd net11 Vdd) OR2
+    I2 (net15 net14 Gnd net19 Vdd) OR2
+    I1 (In\<5\> In\<4\> Gnd net14 Vdd) OR2
+    I0 (In\<7\> In\<6\> Gnd net15 Vdd) OR2
+ends OR_array
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: FinalSum_help
+// View name: schematic
+subckt FinalSum_help Gnd In\<15\> In\<14\> In\<13\> In\<12\> In\<11\> \
+        In\<10\> In\<9\> In\<8\> In\<7\> In\<6\> In\<5\> In\<4\> In\<3\> \
+        In\<2\> In\<1\> In\<0\> Out\<7\> Out\<6\> Out\<5\> Out\<4\> \
+        Out\<3\> Out\<2\> Out\<1\> Out\<0\> S Vdd bit7
+    I8 (In\<3\> S Gnd Out\<3\> Vdd) OR2
+    I7 (In\<2\> S Gnd Out\<2\> Vdd) OR2
+    I6 (S In\<0\> Gnd Out\<0\> Vdd) OR2
+    I5 (In\<1\> S Gnd Out\<1\> Vdd) OR2
+    I3 (In\<4\> S Gnd Out\<4\> Vdd) OR2
+    I2 (In\<5\> S Gnd Out\<5\> Vdd) OR2
+    I1 (In\<6\> S Gnd Out\<6\> Vdd) OR2
+    I4 (bit7 S Gnd Out\<7\> Vdd) OR2
+ends FinalSum_help
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: FinalSum
+// View name: schematic
+subckt FinalSum A\<15\> A\<14\> A\<13\> A\<12\> A\<11\> A\<10\> A\<9\> \
+        A\<8\> A\<7\> A\<6\> A\<5\> A\<4\> A\<3\> A\<2\> A\<1\> A\<0\> \
+        B\<15\> B\<14\> B\<13\> B\<12\> B\<11\> B\<10\> B\<9\> B\<8\> \
+        B\<7\> B\<6\> B\<5\> B\<4\> B\<3\> B\<2\> B\<1\> B\<0\> C_in Gnd \
+        Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> \
+        Out\<0\> Vdd
+    I0 (A\<15\> A\<14\> A\<13\> A\<12\> A\<11\> A\<10\> A\<9\> A\<8\> \
+        A\<7\> A\<6\> A\<5\> A\<4\> A\<3\> A\<2\> A\<1\> A\<0\> B\<15\> \
+        B\<14\> B\<13\> B\<12\> B\<11\> B\<10\> B\<9\> B\<8\> B\<7\> \
+        B\<6\> B\<5\> B\<4\> B\<3\> B\<2\> B\<1\> B\<0\> net3 C_in Gnd \
+        Sum\<15\> Sum\<14\> Sum\<13\> Sum\<12\> Sum\<11\> Sum\<10\> \
+        Sum\<9\> Sum\<8\> Sum\<7\> Sum\<6\> Sum\<5\> Sum\<4\> Sum\<3\> \
+        Sum\<2\> Sum\<1\> Sum\<0\> Vdd) sobel_operator_16bit_RCA_schematic
+    I1 (Gnd Sum\<7\> Sum\<6\> Sum\<5\> Sum\<4\> Sum\<3\> Sum\<2\> Sum\<1\> \
+        Sum\<0\> net08\<0\> net08\<1\> net08\<2\> net08\<3\> net08\<4\> \
+        net08\<5\> net08\<6\> net08\<7\> net08\<8\> net08\<9\> net08\<10\> \
+        net08\<11\> net08\<12\> net08\<13\> net08\<14\> net08\<15\> Vdd \
+        Vdd) Shifter
+    I2 (net3 Gnd Sum\<15\> Sum\<14\> Sum\<13\> Sum\<12\> Sum\<11\> \
+        Sum\<10\> Sum\<9\> Sum\<8\> net015 Vdd net014) OR_array
+    I3 (Gnd net08\<0\> net08\<1\> net08\<2\> net08\<3\> net08\<4\> \
+        net08\<5\> net08\<6\> net08\<7\> net08\<8\> net08\<9\> net08\<10\> \
+        net08\<11\> net08\<12\> net08\<13\> net08\<14\> net08\<15\> \
+        Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> \
+        Out\<0\> net015 Vdd net014) FinalSum_help
+ends FinalSum
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: DFF_sync
+// View name: schematic
+subckt DFF_sync D Q Q_bar clk gnd vdd
+    M2 (net4 net9 net7 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M10 (net38 net9 net13 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M9 (gnd net11 net39 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M8 (net39 clk net7 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M11 (gnd net16 net38 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M3 (net13 clk net11 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    I15 (D gnd vdd net4) inverter
+    I20 (clk gnd vdd net9) inverter
+    I17 (net13 gnd vdd net16) inverter
+    I19 (net13 gnd vdd Q_bar) inverter
+    I16 (net7 gnd vdd net11) inverter
+    I18 (net16 gnd vdd Q) inverter
+    M5 (net37 clk net13 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M6 (vdd net11 net40 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M1 (net4 clk net7 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M4 (vdd net16 net37 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M7 (net40 net9 net7 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M0 (net13 net9 net11 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+ends DFF_sync
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: 8bit_reg
+// View name: schematic
+subckt sobel_operator_8bit_reg_schematic D\<7\> D\<6\> D\<5\> D\<4\> \
+        D\<3\> D\<2\> D\<1\> D\<0\> Q\<7\> Q\<6\> Q\<5\> Q\<4\> Q\<3\> \
+        Q\<2\> Q\<1\> Q\<0\> Q_bar\<7\> Q_bar\<6\> Q_bar\<5\> Q_bar\<4\> \
+        Q_bar\<3\> Q_bar\<2\> Q_bar\<1\> Q_bar\<0\> clk gnd vdd
+    I7 (D\<7\> Q\<7\> Q_bar\<7\> clk gnd vdd) DFF_sync
+    I6 (D\<6\> Q\<6\> Q_bar\<6\> clk gnd vdd) DFF_sync
+    I5 (D\<5\> Q\<5\> Q_bar\<5\> clk gnd vdd) DFF_sync
+    I4 (D\<4\> Q\<4\> Q_bar\<4\> clk gnd vdd) DFF_sync
+    I3 (D\<3\> Q\<3\> Q_bar\<3\> clk gnd vdd) DFF_sync
+    I2 (D\<2\> Q\<2\> Q_bar\<2\> clk gnd vdd) DFF_sync
+    I1 (D\<1\> Q\<1\> Q_bar\<1\> clk gnd vdd) DFF_sync
+    I0 (D\<0\> Q\<0\> Q_bar\<0\> clk gnd vdd) DFF_sync
+ends sobel_operator_8bit_reg_schematic
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: shift_reg
+// View name: schematic
+subckt shift_reg BL\<7\> BL\<6\> BL\<5\> BL\<4\> BL\<3\> BL\<2\> BL\<1\> \
+        BL\<0\> BM\<7\> BM\<6\> BM\<5\> BM\<4\> BM\<3\> BM\<2\> BM\<1\> \
+        BM\<0\> BR\<7\> BR\<6\> BR\<5\> BR\<4\> BR\<3\> BR\<2\> BR\<1\> \
+        BR\<0\> ML\<7\> ML\<6\> ML\<5\> ML\<4\> ML\<3\> ML\<2\> ML\<1\> \
+        ML\<0\> MR\<7\> MR\<6\> MR\<5\> MR\<4\> MR\<3\> MR\<2\> MR\<1\> \
+        MR\<0\> TL\<7\> TL\<6\> TL\<5\> TL\<4\> TL\<3\> TL\<2\> TL\<1\> \
+        TL\<0\> TM\<7\> TM\<6\> TM\<5\> TM\<4\> TM\<3\> TM\<2\> TM\<1\> \
+        TM\<0\> TR\<7\> TR\<6\> TR\<5\> TR\<4\> TR\<3\> TR\<2\> TR\<1\> \
+        TR\<0\> bot_L\<7\> bot_L\<6\> bot_L\<5\> bot_L\<4\> bot_L\<3\> \
+        bot_L\<2\> bot_L\<1\> bot_L\<0\> clk gnd mid_L\<7\> mid_L\<6\> \
+        mid_L\<5\> mid_L\<4\> mid_L\<3\> mid_L\<2\> mid_L\<1\> mid_L\<0\> \
+        up_L\<7\> up_L\<6\> up_L\<5\> up_L\<4\> up_L\<3\> up_L\<2\> \
+        up_L\<1\> up_L\<0\> vdd
+    I18 (ML\<7\> ML\<6\> ML\<5\> ML\<4\> ML\<3\> ML\<2\> ML\<1\> ML\<0\> \
+        net025\<0\> net025\<1\> net025\<2\> net025\<3\> net025\<4\> \
+        net025\<5\> net025\<6\> net025\<7\> net029\<0\> net029\<1\> \
+        net029\<2\> net029\<3\> net029\<4\> net029\<5\> net029\<6\> \
+        net029\<7\> clk gnd vdd) sobel_operator_8bit_reg_schematic
+    I11 (TL\<7\> TL\<6\> TL\<5\> TL\<4\> TL\<3\> TL\<2\> TL\<1\> TL\<0\> \
+        TM\<7\> TM\<6\> TM\<5\> TM\<4\> TM\<3\> TM\<2\> TM\<1\> TM\<0\> \
+        net34\<0\> net34\<1\> net34\<2\> net34\<3\> net34\<4\> net34\<5\> \
+        net34\<6\> net34\<7\> clk gnd vdd) \
+        sobel_operator_8bit_reg_schematic
+    I10 (mid_L\<7\> mid_L\<6\> mid_L\<5\> mid_L\<4\> mid_L\<3\> mid_L\<2\> \
+        mid_L\<1\> mid_L\<0\> ML\<7\> ML\<6\> ML\<5\> ML\<4\> ML\<3\> \
+        ML\<2\> ML\<1\> ML\<0\> net35\<0\> net35\<1\> net35\<2\> \
+        net35\<3\> net35\<4\> net35\<5\> net35\<6\> net35\<7\> clk gnd \
+        vdd) sobel_operator_8bit_reg_schematic
+    I9 (up_L\<7\> up_L\<6\> up_L\<5\> up_L\<4\> up_L\<3\> up_L\<2\> \
+        up_L\<1\> up_L\<0\> TL\<7\> TL\<6\> TL\<5\> TL\<4\> TL\<3\> \
+        TL\<2\> TL\<1\> TL\<0\> net56\<0\> net56\<1\> net56\<2\> \
+        net56\<3\> net56\<4\> net56\<5\> net56\<6\> net56\<7\> clk gnd \
+        vdd) sobel_operator_8bit_reg_schematic
+    I13 (TM\<7\> TM\<6\> TM\<5\> TM\<4\> TM\<3\> TM\<2\> TM\<1\> TM\<0\> \
+        TR\<7\> TR\<6\> TR\<5\> TR\<4\> TR\<3\> TR\<2\> TR\<1\> TR\<0\> \
+        net33\<0\> net33\<1\> net33\<2\> net33\<3\> net33\<4\> net33\<5\> \
+        net33\<6\> net33\<7\> clk gnd vdd) \
+        sobel_operator_8bit_reg_schematic
+    I14 (net025\<0\> net025\<1\> net025\<2\> net025\<3\> net025\<4\> \
+        net025\<5\> net025\<6\> net025\<7\> MR\<7\> MR\<6\> MR\<5\> \
+        MR\<4\> MR\<3\> MR\<2\> MR\<1\> MR\<0\> net32\<0\> net32\<1\> \
+        net32\<2\> net32\<3\> net32\<4\> net32\<5\> net32\<6\> net32\<7\> \
+        clk gnd vdd) sobel_operator_8bit_reg_schematic
+    I17 (BM\<7\> BM\<6\> BM\<5\> BM\<4\> BM\<3\> BM\<2\> BM\<1\> BM\<0\> \
+        BR\<7\> BR\<6\> BR\<5\> BR\<4\> BR\<3\> BR\<2\> BR\<1\> BR\<0\> \
+        net29\<0\> net29\<1\> net29\<2\> net29\<3\> net29\<4\> net29\<5\> \
+        net29\<6\> net29\<7\> clk gnd vdd) \
+        sobel_operator_8bit_reg_schematic
+    I16 (BL\<7\> BL\<6\> BL\<5\> BL\<4\> BL\<3\> BL\<2\> BL\<1\> BL\<0\> \
+        BM\<7\> BM\<6\> BM\<5\> BM\<4\> BM\<3\> BM\<2\> BM\<1\> BM\<0\> \
+        net30\<0\> net30\<1\> net30\<2\> net30\<3\> net30\<4\> net30\<5\> \
+        net30\<6\> net30\<7\> clk gnd vdd) \
+        sobel_operator_8bit_reg_schematic
+    I15 (bot_L\<7\> bot_L\<6\> bot_L\<5\> bot_L\<4\> bot_L\<3\> bot_L\<2\> \
+        bot_L\<1\> bot_L\<0\> BL\<7\> BL\<6\> BL\<5\> BL\<4\> BL\<3\> \
+        BL\<2\> BL\<1\> BL\<0\> net31\<0\> net31\<1\> net31\<2\> \
+        net31\<3\> net31\<4\> net31\<5\> net31\<6\> net31\<7\> clk gnd \
+        vdd) sobel_operator_8bit_reg_schematic
+ends shift_reg
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: Sobel
+// View name: schematic
+subckt Sobel Bot_L\<7\> Bot_L\<6\> Bot_L\<5\> Bot_L\<4\> Bot_L\<3\> \
+        Bot_L\<2\> Bot_L\<1\> Bot_L\<0\> Clk Gnd Mid_L\<7\> Mid_L\<6\> \
+        Mid_L\<5\> Mid_L\<4\> Mid_L\<3\> Mid_L\<2\> Mid_L\<1\> Mid_L\<0\> \
+        Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> \
+        Out\<0\> Top_L\<7\> Top_L\<6\> Top_L\<5\> Top_L\<4\> Top_L\<3\> \
+        Top_L\<2\> Top_L\<1\> Top_L\<0\> Vdd one\<7\> one\<6\> one\<5\> \
+        one\<4\> one\<3\> one\<2\> one\<1\> one\<0\>
+    I2 (net08 Gnd net10\<0\> net10\<1\> net10\<2\> net10\<3\> net10\<4\> \
+        net10\<5\> net10\<6\> net10\<7\> net035\<0\> net035\<1\> \
+        net035\<2\> net035\<3\> net035\<4\> net035\<5\> net035\<6\> \
+        net035\<7\> net033\<0\> net033\<1\> net033\<2\> net033\<3\> \
+        net033\<4\> net033\<5\> net033\<6\> net033\<7\> net9\<0\> \
+        net9\<1\> net9\<2\> net9\<3\> net9\<4\> net9\<5\> net9\<6\> \
+        net9\<7\> net013\<0\> net013\<1\> net013\<2\> net013\<3\> \
+        net013\<4\> net013\<5\> net013\<6\> net013\<7\> net03\<0\> \
+        net03\<1\> net03\<2\> net03\<3\> net03\<4\> net03\<5\> net03\<6\> \
+        net03\<7\> net03\<8\> net03\<9\> net03\<10\> net03\<11\> \
+        net03\<12\> net03\<13\> net03\<14\> net03\<15\> net7\<0\> \
+        net7\<1\> net7\<2\> net7\<3\> net7\<4\> net7\<5\> net7\<6\> \
+        net7\<7\> Vdd one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> \
+        one\<2\> one\<1\> one\<0\>) Transform
+    I0 (net4 Gnd net035\<0\> net035\<1\> net035\<2\> net035\<3\> \
+        net035\<4\> net035\<5\> net035\<6\> net035\<7\> net013\<0\> \
+        net013\<1\> net013\<2\> net013\<3\> net013\<4\> net013\<5\> \
+        net013\<6\> net013\<7\> net8\<0\> net8\<1\> net8\<2\> net8\<3\> \
+        net8\<4\> net8\<5\> net8\<6\> net8\<7\> net9\<0\> net9\<1\> \
+        net9\<2\> net9\<3\> net9\<4\> net9\<5\> net9\<6\> net9\<7\> \
+        net10\<0\> net10\<1\> net10\<2\> net10\<3\> net10\<4\> net10\<5\> \
+        net10\<6\> net10\<7\> net5\<0\> net5\<1\> net5\<2\> net5\<3\> \
+        net5\<4\> net5\<5\> net5\<6\> net5\<7\> net5\<8\> net5\<9\> \
+        net5\<10\> net5\<11\> net5\<12\> net5\<13\> net5\<14\> net5\<15\> \
+        net031\<0\> net031\<1\> net031\<2\> net031\<3\> net031\<4\> \
+        net031\<5\> net031\<6\> net031\<7\> Vdd one\<7\> one\<6\> one\<5\> \
+        one\<4\> one\<3\> one\<2\> one\<1\> one\<0\>) Transform
+    I1 (net5\<0\> net5\<1\> net5\<2\> net5\<3\> net5\<4\> net5\<5\> \
+        net5\<6\> net5\<7\> net5\<8\> net5\<9\> net5\<10\> net5\<11\> \
+        net5\<12\> net5\<13\> net5\<14\> net5\<15\> net03\<0\> net03\<1\> \
+        net03\<2\> net03\<3\> net03\<4\> net03\<5\> net03\<6\> net03\<7\> \
+        net03\<8\> net03\<9\> net03\<10\> net03\<11\> net03\<12\> \
+        net03\<13\> net03\<14\> net03\<15\> net032 Gnd Out\<7\> Out\<6\> \
+        Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> Vdd) \
+        FinalSum
+    I3 (net10\<0\> net10\<1\> net10\<2\> net10\<3\> net10\<4\> net10\<5\> \
+        net10\<6\> net10\<7\> net031\<0\> net031\<1\> net031\<2\> \
+        net031\<3\> net031\<4\> net031\<5\> net031\<6\> net031\<7\> \
+        net9\<0\> net9\<1\> net9\<2\> net9\<3\> net9\<4\> net9\<5\> \
+        net9\<6\> net9\<7\> net033\<0\> net033\<1\> net033\<2\> \
+        net033\<3\> net033\<4\> net033\<5\> net033\<6\> net033\<7\> \
+        net7\<0\> net7\<1\> net7\<2\> net7\<3\> net7\<4\> net7\<5\> \
+        net7\<6\> net7\<7\> net035\<0\> net035\<1\> net035\<2\> \
+        net035\<3\> net035\<4\> net035\<5\> net035\<6\> net035\<7\> \
+        net8\<0\> net8\<1\> net8\<2\> net8\<3\> net8\<4\> net8\<5\> \
+        net8\<6\> net8\<7\> net013\<0\> net013\<1\> net013\<2\> \
+        net013\<3\> net013\<4\> net013\<5\> net013\<6\> net013\<7\> \
+        Bot_L\<7\> Bot_L\<6\> Bot_L\<5\> Bot_L\<4\> Bot_L\<3\> Bot_L\<2\> \
+        Bot_L\<1\> Bot_L\<0\> Clk Gnd Mid_L\<7\> Mid_L\<6\> Mid_L\<5\> \
+        Mid_L\<4\> Mid_L\<3\> Mid_L\<2\> Mid_L\<1\> Mid_L\<0\> Top_L\<7\> \
+        Top_L\<6\> Top_L\<5\> Top_L\<4\> Top_L\<3\> Top_L\<2\> Top_L\<1\> \
+        Top_L\<0\> Vdd) shift_reg
+    I4 (net4 net08 Gnd net032 Vdd) XOR2
+ends Sobel
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: homogenous_data_input
+// View name: schematic
+subckt homogenous_data_input bottom\<7\> bottom\<6\> bottom\<5\> \
+        bottom\<4\> bottom\<3\> bottom\<2\> bottom\<1\> bottom\<0\> \
+        middle\<7\> middle\<6\> middle\<5\> middle\<4\> middle\<3\> \
+        middle\<2\> middle\<1\> middle\<0\> top\<7\> top\<6\> top\<5\> \
+        top\<4\> top\<3\> top\<2\> top\<1\> top\<0\>
+    V23 (bottom\<7\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V22 (bottom\<6\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V21 (bottom\<5\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V20 (bottom\<4\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V19 (bottom\<3\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V18 (bottom\<2\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V17 (bottom\<1\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V16 (bottom\<0\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="11111111" rptstart=1 rpttimes=0
+    V15 (middle\<7\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V14 (middle\<6\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V13 (middle\<5\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V12 (middle\<4\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V11 (middle\<3\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V10 (middle\<2\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V9 (middle\<1\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V8 (middle\<0\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="11111111" rptstart=1 rpttimes=0
+    V7 (top\<7\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V6 (top\<6\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V5 (top\<5\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V4 (top\<4\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V3 (top\<3\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V2 (top\<2\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V1 (top\<1\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V0 (top\<0\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="11111111" rptstart=1 rpttimes=0
+ends homogenous_data_input
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: clock
+// View name: schematic
+subckt clock clk
+    V0 (clk 0) vsource dc=0 type=pulse val0=0 val1=1.1 period=40n delay=1n \
+        rise=20p fall=20p width=20n
+ends clock
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: 8bit_one
+// View name: schematic
+subckt sobel_operator_8bit_one_schematic One\<7\> One\<6\> One\<5\> \
+        One\<4\> One\<3\> One\<2\> One\<1\> One\<0\> Zero\<7\> Zero\<6\> \
+        Zero\<5\> Zero\<4\> Zero\<3\> Zero\<2\> Zero\<1\> Zero\<0\>
+    V15 (Zero\<7\> 0) vsource dc=0 type=dc
+    V14 (Zero\<6\> 0) vsource dc=0 type=dc
+    V13 (Zero\<5\> 0) vsource dc=0 type=dc
+    V12 (Zero\<4\> 0) vsource dc=0 type=dc
+    V11 (Zero\<3\> 0) vsource dc=0 type=dc
+    V10 (Zero\<2\> 0) vsource dc=0 type=dc
+    V9 (Zero\<1\> 0) vsource dc=0 type=dc
+    V8 (Zero\<0\> 0) vsource dc=0 type=dc
+    V7 (One\<0\> 0) vsource dc=1.1 type=dc
+    V6 (One\<1\> 0) vsource dc=0 type=dc
+    V5 (One\<2\> 0) vsource dc=0 type=dc
+    V4 (One\<3\> 0) vsource dc=0 type=dc
+    V3 (One\<4\> 0) vsource dc=0 type=dc
+    V2 (One\<5\> 0) vsource dc=0 type=dc
+    V1 (One\<6\> 0) vsource dc=0 type=dc
+    V0 (One\<7\> 0) vsource dc=0 type=dc
+ends sobel_operator_8bit_one_schematic
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: sobel_sim
+// View name: schematic
+I0 (bot\<7\> bot\<6\> bot\<5\> bot\<4\> bot\<3\> bot\<2\> bot\<1\> \
+        bot\<0\> clock net8 mid\<7\> mid\<6\> mid\<5\> mid\<4\> mid\<3\> \
+        mid\<2\> mid\<1\> mid\<0\> out\<7\> out\<6\> out\<5\> out\<4\> \
+        out\<3\> out\<2\> out\<1\> out\<0\> top\<7\> top\<6\> top\<5\> \
+        top\<4\> top\<3\> top\<2\> top\<1\> top\<0\> net4 net14\<0\> \
+        net14\<1\> net14\<2\> net14\<3\> net14\<4\> net14\<5\> net14\<6\> \
+        net14\<7\>) Sobel
+I1 (bot\<7\> bot\<6\> bot\<5\> bot\<4\> bot\<3\> bot\<2\> bot\<1\> \
+        bot\<0\> mid\<7\> mid\<6\> mid\<5\> mid\<4\> mid\<3\> mid\<2\> \
+        mid\<1\> mid\<0\> top\<7\> top\<6\> top\<5\> top\<4\> top\<3\> \
+        top\<2\> top\<1\> top\<0\>) homogenous_data_input
+I2 (clock) clock
+V1 (net8 0) vsource dc=0 type=dc
+V0 (net4 0) vsource dc=1.1 type=dc
+I5 (net14\<0\> net14\<1\> net14\<2\> net14\<3\> net14\<4\> net14\<5\> \
+        net14\<6\> net14\<7\> net16\<0\> net16\<1\> net16\<2\> net16\<3\> \
+        net16\<4\> net16\<5\> net16\<6\> net16\<7\>) \
+        sobel_operator_8bit_one_schematic
+simulatorOptions options psfversion="1.1.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=0.0 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 \
+    rforce=1 maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=200n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save clock bot\<7\> bot\<6\> bot\<5\> bot\<4\> bot\<3\> bot\<2\> bot\<1\> \
+    bot\<0\> mid\<7\> mid\<6\> mid\<5\> mid\<4\> mid\<3\> mid\<2\> \
+    mid\<1\> mid\<0\> top\<7\> top\<6\> top\<5\> top\<4\> top\<3\> \
+    top\<2\> top\<1\> top\<0\> out\<7\> out\<6\> out\<5\> out\<4\> \
+    out\<3\> out\<2\> out\<1\> out\<0\> 
+saveOptions options save=allpub

@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: May  2 16:40:43 2022
+// Design library name: sobel_operator
+// Design cell name: test_DFF_syn
+// Design view name: schematic
+simulator lang=spectre
+global 0

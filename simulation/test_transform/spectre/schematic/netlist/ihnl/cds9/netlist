@@ -1,0 +1,5 @@
+    I0 (net15 net14 Gnd Out Vdd) AND2
+    I1 (A B Gnd net15 Vdd) OR2
+    I2 (A B net14 Gnd Vdd) NAND2
+ends XOR2
+// End of subcircuit definition.

@@ -1,0 +1,20 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "test_NAND2"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/home/ckb4640/CE_392/simulation/test_NAND2/spectre/schematic/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "sobel_operator/NAND2/schematic" "NAND2" )
+( "sobel_operator/test_NAND2/schematic" "test_NAND2" )
+ )
+( "test_NAND2" "ihnl/cds1/map" )
+( "NAND2" "ihnl/cds0/map" )
+ )

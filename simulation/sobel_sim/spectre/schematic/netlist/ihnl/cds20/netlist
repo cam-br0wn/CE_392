@@ -1,0 +1,4 @@
+    V0 (clk 0) vsource dc=0 type=pulse val0=0 val1=1.1 period=40n delay=1n \
+        rise=20p fall=20p width=20n
+ends clock
+// End of subcircuit definition.

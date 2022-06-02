@@ -1,0 +1,50 @@
+    V23 (bottom\<7\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V22 (bottom\<6\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V21 (bottom\<5\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V20 (bottom\<4\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V19 (bottom\<3\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V18 (bottom\<2\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V17 (bottom\<1\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V16 (bottom\<0\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="11111111" rptstart=1 rpttimes=0
+    V15 (middle\<7\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V14 (middle\<6\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V13 (middle\<5\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V12 (middle\<4\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V11 (middle\<3\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V10 (middle\<2\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V9 (middle\<1\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V8 (middle\<0\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="11111111" rptstart=1 rpttimes=0
+    V7 (top\<7\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V6 (top\<6\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V5 (top\<5\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V4 (top\<4\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V3 (top\<3\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V2 (top\<2\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V1 (top\<1\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="00000000" rptstart=1 rpttimes=0
+    V0 (top\<0\> 0) vsource val1=1.1 val0=0 delay=1n rise=10p fall=10p \
+        period=10n type=bit data="11111111" rptstart=1 rpttimes=0
+ends homogenous_data_input
+// End of subcircuit definition.

@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"sobel_operator\" \"sobel_sim\" \"schematic\" \"\")"
+"simulator" "spectre"
+"temperature" "0.0"
+"host" ""
+"date" "Jun  1 20:33:46 2022"
+"title" ""
+"analysisList" "()"
+END

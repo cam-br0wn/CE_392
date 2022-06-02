@@ -1,0 +1,25 @@
+CADENCE IHNL111423
+
+sobel_operator NAND2 schematic cds0
+sobel_operator inverter schematic cds1
+sobel_operator AND2 schematic cds2
+sobel_operator OR2 schematic cds3
+sobel_operator 8bit_to_16bit schematic cds4
+sobel_operator Shifter schematic cds5
+sobel_operator full_adder schematic cds6
+sobel_operator 16bit_RCA schematic cds7
+sobel_operator Minus1 schematic cds8
+sobel_operator Minus2 schematic cds9
+sobel_operator XOR2 schematic cds10
+sobel_operator Transform schematic cds11
+sobel_operator OR_array schematic cds12
+sobel_operator FinalSum_help schematic cds13
+sobel_operator FinalSum schematic cds14
+sobel_operator DFF_sync schematic cds15
+sobel_operator 8bit_reg schematic cds16
+sobel_operator shift_reg schematic cds17
+sobel_operator Sobel schematic cds18
+sobel_operator homogenous_data_input schematic cds19
+sobel_operator clock schematic cds20
+sobel_operator 8bit_one schematic cds21
+sobel_operator sobel_sim schematic cds22

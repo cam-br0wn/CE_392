@@ -1,0 +1,5 @@
+
+// Library name: sobel_operator
+// Cell name: full_adder
+// View name: schematic
+subckt full_adder a b c_in c_out gnd sum vdd

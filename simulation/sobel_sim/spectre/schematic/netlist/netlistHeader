@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Jun  1 20:19:10 2022
+// Design library name: sobel_operator
+// Design cell name: sobel_sim
+// Design view name: schematic
+simulator lang=spectre
+global 0

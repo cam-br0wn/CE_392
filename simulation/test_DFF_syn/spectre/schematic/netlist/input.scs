@@ -1,0 +1,73 @@
+// Generated for: spectre
+// Generated on: May  2 16:40:43 2022
+// Design library name: sobel_operator
+// Design cell name: test_DFF_syn
+// Design view name: schematic
+simulator lang=spectre
+global 0
+parameters vdd=1.1
+include "/vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include"
+
+// Library name: sobel_operator
+// Cell name: NAND2
+// View name: schematic
+subckt NAND2 A B Y gnd vdd
+    M2 (Y A net16 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M3 (net16 B gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M0 (Y A vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+    M1 (Y B vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+ends NAND2
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: inverter
+// View name: schematic
+subckt inverter A GND VDD Y
+    M0 (Y A VDD VDD) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 ps=810.0n \
+        pd=810.0n ld=105n ls=105n m=1
+    M1 (Y A GND GND) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 ps=610.0n \
+        pd=610.0n ld=105n ls=105n m=1
+ends inverter
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: DFF_sync
+// View name: schematic
+subckt DFF_sync D Q Q_bar clk gnd vdd
+    I13 (Q net15 Q_bar gnd vdd) NAND2
+    I12 (net14 Q_bar Q gnd vdd) NAND2
+    I11 (clk net12 net15 gnd vdd) NAND2
+    I10 (D clk net14 gnd vdd) NAND2
+    I14 (D gnd vdd net12) inverter
+ends DFF_sync
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: test_DFF_syn
+// View name: schematic
+I0 (D Q Q_bar clk net9 net10) DFF_sync
+V0 (D 0) vsource type=bit val0=0 val1=1.1 period=10n rise=10p fall=10p \
+        data="00010011000000" rptstart=1 rpttimes=0
+default_config (clk 0) vsource dc=0 type=pulse val0=0 val1=1.1 period=10n \
+        delay=1n rise=20p fall=20p width=5n
+V3 (net9 0) vsource dc=0 type=dc
+V1 (net10 0) vsource dc=vdd type=dc
+simulatorOptions options psfversion="1.1.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=100n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save D clk Q Q_bar 
+saveOptions options save=allpub

@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"I13n I12n I11n I10n" "NAND2"
+"I14n" "inverter"
+"Dv" ":1v"
+"Qv" ":2v"
+"Q_barv" ":3v"
+"clkv" ":4v"
+"gndv" ":5v"
+"vddv" ":6v"

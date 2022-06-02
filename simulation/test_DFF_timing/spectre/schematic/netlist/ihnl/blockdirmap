@@ -1,0 +1,5 @@
+CADENCE IHNL11145
+
+sobel_operator DFF_sync schematic cds2
+sobel_operator clock schematic cds3
+sobel_operator test_DFF_timing schematic cds4

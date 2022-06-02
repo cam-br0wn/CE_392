@@ -1,0 +1,52 @@
+    I0 (Gnd Two\<7\> Two\<6\> Two\<5\> Two\<4\> Two\<3\> Two\<2\> Two\<1\> \
+        Two\<0\> net52\<0\> net52\<1\> net52\<2\> net52\<3\> net52\<4\> \
+        net52\<5\> net52\<6\> net52\<7\> Gnd Vdd) Shifter
+    I1 (net57 Gnd NegTwo\<7\> NegTwo\<6\> NegTwo\<5\> NegTwo\<4\> \
+        NegTwo\<3\> NegTwo\<2\> NegTwo\<1\> NegTwo\<0\> net55\<0\> \
+        net55\<1\> net55\<2\> net55\<3\> net55\<4\> net55\<5\> net55\<6\> \
+        net55\<7\> Vdd one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> \
+        one\<2\> one\<1\> one\<0\>) Minus2
+    I3 (net58 Gnd NegOne_A\<7\> NegOne_A\<6\> NegOne_A\<5\> NegOne_A\<4\> \
+        NegOne_A\<3\> NegOne_A\<2\> NegOne_A\<1\> NegOne_A\<0\> net51\<0\> \
+        net51\<1\> net51\<2\> net51\<3\> net51\<4\> net51\<5\> net51\<6\> \
+        net51\<7\> Vdd one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> \
+        one\<2\> one\<1\> one\<0\>) Minus1
+    I2 (net59 Gnd NegOne_B\<7\> NegOne_B\<6\> NegOne_B\<5\> NegOne_B\<4\> \
+        NegOne_B\<3\> NegOne_B\<2\> NegOne_B\<1\> NegOne_B\<0\> net50\<0\> \
+        net50\<1\> net50\<2\> net50\<3\> net50\<4\> net50\<5\> net50\<6\> \
+        net50\<7\> Vdd one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> \
+        one\<2\> one\<1\> one\<0\>) Minus1
+    I10 (net047 C_Out Gnd Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> \
+        Out\<2\> Out\<1\> Out\<0\> Vdd net54\<0\> net54\<1\> net54\<2\> \
+        net54\<3\> net54\<4\> net54\<5\> net54\<6\> net54\<7\> net56\<0\> \
+        net56\<1\> net56\<2\> net56\<3\> net56\<4\> net56\<5\> net56\<6\> \
+        net56\<7\>) sobel_operator_8bit_RCA_schematic
+    I9 (net046 net44 Gnd net56\<0\> net56\<1\> net56\<2\> net56\<3\> \
+        net56\<4\> net56\<5\> net56\<6\> net56\<7\> Vdd net53\<0\> \
+        net53\<1\> net53\<2\> net53\<3\> net53\<4\> net53\<5\> net53\<6\> \
+        net53\<7\> net55\<0\> net55\<1\> net55\<2\> net55\<3\> net55\<4\> \
+        net55\<5\> net55\<6\> net55\<7\>) \
+        sobel_operator_8bit_RCA_schematic
+    I8 (net034 net40 Gnd net53\<0\> net53\<1\> net53\<2\> net53\<3\> \
+        net53\<4\> net53\<5\> net53\<6\> net53\<7\> Vdd net51\<0\> \
+        net51\<1\> net51\<2\> net51\<3\> net51\<4\> net51\<5\> net51\<6\> \
+        net51\<7\> net50\<0\> net50\<1\> net50\<2\> net50\<3\> net50\<4\> \
+        net50\<5\> net50\<6\> net50\<7\>) \
+        sobel_operator_8bit_RCA_schematic
+    I7 (net38 net60 Gnd net54\<0\> net54\<1\> net54\<2\> net54\<3\> \
+        net54\<4\> net54\<5\> net54\<6\> net54\<7\> Vdd net49\<0\> \
+        net49\<1\> net49\<2\> net49\<3\> net49\<4\> net49\<5\> net49\<6\> \
+        net49\<7\> net52\<0\> net52\<1\> net52\<2\> net52\<3\> net52\<4\> \
+        net52\<5\> net52\<6\> net52\<7\>) \
+        sobel_operator_8bit_RCA_schematic
+    I6 (Gnd net38 Gnd net49\<0\> net49\<1\> net49\<2\> net49\<3\> \
+        net49\<4\> net49\<5\> net49\<6\> net49\<7\> Vdd One_A\<7\> \
+        One_A\<6\> One_A\<5\> One_A\<4\> One_A\<3\> One_A\<2\> One_A\<1\> \
+        One_A\<0\> One_B\<7\> One_B\<6\> One_B\<5\> One_B\<4\> One_B\<3\> \
+        One_B\<2\> One_B\<1\> One_B\<0\>) \
+        sobel_operator_8bit_RCA_schematic
+    I13 (net60 net44 Gnd net047 Vdd) XOR2
+    I12 (net40 net57 Gnd net046 Vdd) XOR2
+    I11 (net58 net59 Gnd net034 Vdd) XOR2
+ends Transform
+// End of subcircuit definition.

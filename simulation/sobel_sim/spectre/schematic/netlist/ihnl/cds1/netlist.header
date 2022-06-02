@@ -1,0 +1,5 @@
+
+// Library name: sobel_operator
+// Cell name: inverter
+// View name: schematic
+subckt inverter A GND VDD Y

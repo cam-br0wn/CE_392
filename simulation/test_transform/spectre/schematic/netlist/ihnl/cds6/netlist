@@ -1,0 +1,10 @@
+    I7 (a\<4\> b\<4\> net15 net16 Gnd S\<4\> Vdd) full_adder
+    I6 (a\<7\> b\<7\> net17 C_Out Gnd S\<7\> Vdd) full_adder
+    I5 (a\<6\> b\<6\> net19 net17 Gnd S\<6\> Vdd) full_adder
+    I4 (a\<5\> b\<5\> net16 net19 Gnd S\<5\> Vdd) full_adder
+    I3 (a\<3\> b\<3\> net18 net15 Gnd S\<3\> Vdd) full_adder
+    I2 (a\<2\> b\<2\> net21 net18 Gnd S\<2\> Vdd) full_adder
+    I1 (a\<1\> b\<1\> net20 net21 Gnd S\<1\> Vdd) full_adder
+    I0 (a\<0\> b\<0\> C_In net20 Gnd S\<0\> Vdd) full_adder
+ends sobel_operator_8bit_RCA_schematic
+// End of subcircuit definition.

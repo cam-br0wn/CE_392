@@ -1,0 +1,27 @@
+    I26 (In_Bar\<15\> In_Bar\<14\> In_Bar\<13\> In_Bar\<12\> In_Bar\<11\> \
+        In_Bar\<10\> In_Bar\<9\> In_Bar\<8\> In_Bar\<7\> In_Bar\<6\> \
+        In_Bar\<5\> In_Bar\<4\> In_Bar\<3\> In_Bar\<2\> In_Bar\<1\> \
+        In_Bar\<0\> one\<15\> one\<14\> one\<13\> one\<12\> one\<11\> \
+        one\<10\> one\<9\> one\<8\> one\<7\> one\<6\> one\<5\> one\<4\> \
+        one\<3\> one\<2\> one\<1\> one\<0\> C_Out Gnd Gnd Out\<15\> \
+        Out\<14\> Out\<13\> Out\<12\> Out\<11\> Out\<10\> Out\<9\> \
+        Out\<8\> Out\<7\> Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> \
+        Out\<1\> Out\<0\> Vdd) sobel_operator_16bit_RCA_schematic
+    I24 (In\<15\> Gnd Vdd In_Bar\<15\>) inverter
+    I23 (In\<14\> Gnd Vdd In_Bar\<14\>) inverter
+    I22 (In\<13\> Gnd Vdd In_Bar\<13\>) inverter
+    I21 (In\<12\> Gnd Vdd In_Bar\<12\>) inverter
+    I20 (In\<11\> Gnd Vdd In_Bar\<11\>) inverter
+    I19 (In\<10\> Gnd Vdd In_Bar\<10\>) inverter
+    I18 (In\<9\> Gnd Vdd In_Bar\<9\>) inverter
+    I17 (In\<8\> Gnd Vdd In_Bar\<8\>) inverter
+    I8 (In\<0\> Gnd Vdd In_Bar\<0\>) inverter
+    I7 (In\<1\> Gnd Vdd In_Bar\<1\>) inverter
+    I6 (In\<2\> Gnd Vdd In_Bar\<2\>) inverter
+    I5 (In\<3\> Gnd Vdd In_Bar\<3\>) inverter
+    I4 (In\<4\> Gnd Vdd In_Bar\<4\>) inverter
+    I3 (In\<5\> Gnd Vdd In_Bar\<5\>) inverter
+    I2 (In\<6\> Gnd Vdd In_Bar\<6\>) inverter
+    I1 (In\<7\> Gnd Vdd In_Bar\<7\>) inverter
+ends Minus1
+// End of subcircuit definition.

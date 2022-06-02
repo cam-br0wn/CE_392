@@ -1,0 +1,99 @@
+// Generated for: spectre
+// Generated on: May  5 16:29:54 2022
+// Design library name: sobel_operator
+// Design cell name: test_DFF_timing
+// Design view name: schematic
+simulator lang=spectre
+global 0
+include "/vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include"
+
+// Library name: sobel_operator
+// Cell name: DFF_sync
+// View name: schematic
+subckt DFF_sync D Q Q_bar clk gnd vdd
+    M24 (net18 clk gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M22 (net39 clk net35 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M21 (net14 net18 net22 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 \
+        ad=4.2e-14 ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M20 (Q_bar net39 gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M19 (net70 net35 gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M18 (net22 net18 net70 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 \
+        ad=4.2e-14 ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M17 (net73 clk net39 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M16 (gnd net53 net73 gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M15 (Q net53 gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M14 (net53 net39 gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M13 (net35 net22 gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M12 (net14 D gnd gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M23 (net18 clk vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M10 (net14 D vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M9 (net35 net22 vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M8 (net39 net18 net35 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M7 (net22 clk net14 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M6 (net71 net35 vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M5 (net22 clk net71 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M4 (vdd net53 net72 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M3 (net72 net18 net39 vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M2 (Q net53 vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M1 (net53 net39 vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+    M0 (Q_bar net39 vdd vdd) PMOS_VTG w=600n l=50n as=6.3e-14 ad=6.3e-14 \
+        ps=810.0n pd=810.0n ld=105n ls=105n m=1
+ends DFF_sync
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: clock
+// View name: schematic
+subckt clock clk
+    V0 (clk 0) vsource dc=0 type=pulse val0=0 val1=1.1 period=40n delay=0 \
+        rise=20p fall=20p width=20n
+ends clock
+// End of subcircuit definition.
+
+// Library name: sobel_operator
+// Cell name: test_DFF_timing
+// View name: schematic
+I2 (q1 q2 net6 clk net3 net4) DFF_sync
+I1 (q0 q1 net7 clk net3 net4) DFF_sync
+I0 (d q0 net8 clk net3 net4) DFF_sync
+V0 (d 0) vsource val1=1.1 val0=0 delay=20p rise=10p fall=10p period=20n \
+        type=bit data="0010000000" rptstart=1 rpttimes=0
+I3 (clk) clock
+V2 (net3 0) vsource dc=0 type=dc
+V1 (net4 0) vsource dc=1.1 type=dc
+simulatorOptions options psfversion="1.1.0" reltol=1e-3 vabstol=1e-6 \
+    iabstol=1e-12 temp=27 tnom=27 scalem=1.0 scale=1.0 gmin=1e-12 rforce=1 \
+    maxnotes=5 maxwarns=5 digits=5 cols=80 pivrel=1e-3 \
+    sensfile="../psf/sens.output" checklimitdest=psf 
+tran tran stop=200n errpreset=moderate write="spectre.ic" \
+    writefinal="spectre.fc" annotate=status maxiters=5 
+finalTimeOP info what=oppoint where=rawfile
+modelParameter info what=models where=rawfile
+element info what=inst where=rawfile
+outputParameter info what=output where=rawfile
+designParamVals info what=parameters where=rawfile
+primitives info what=primitives where=rawfile
+subckts info what=subckts where=rawfile
+save clk d q0 q1 q2 I3:1 
+saveOptions options save=allpub

@@ -1,0 +1,11 @@
+    M1 (net13 B Gnd Gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M0 (net13 A Gnd Gnd) NMOS_VTG w=400n l=50n as=4.2e-14 ad=4.2e-14 \
+        ps=610.0n pd=610.0n ld=105n ls=105n m=1
+    M3 (net13 B net17 Vdd) PMOS_VTG w=1.2u l=50n as=1.26e-13 ad=1.26e-13 \
+        ps=1.41u pd=1.41u ld=105n ls=105n m=1
+    M2 (net17 A Vdd Vdd) PMOS_VTG w=1.2u l=50n as=1.26e-13 ad=1.26e-13 \
+        ps=1.41u pd=1.41u ld=105n ls=105n m=1
+    I0 (net13 Gnd Vdd Out) inverter
+ends OR2
+// End of subcircuit definition.

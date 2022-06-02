@@ -1,0 +1,22 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "test_DFF_timing"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/home/ckb4640/CE_392/simulation/test_DFF_timing/spectre/schematic/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "sobel_operator/clock/schematic" "clock" )
+( "sobel_operator/DFF_sync/schematic" "DFF_sync" )
+( "sobel_operator/test_DFF_timing/schematic" "test_DFF_timing" )
+ )
+( "clock" "ihnl/cds3/map" )
+( "DFF_sync" "ihnl/cds2/map" )
+( "test_DFF_timing" "ihnl/cds4/map" )
+ )

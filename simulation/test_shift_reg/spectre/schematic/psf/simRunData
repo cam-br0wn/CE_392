@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"sobel_operator\" \"test_shift_reg\" \"schematic\" \"\")"
+"simulator" "spectre"
+"temperature" "27"
+"host" ""
+"date" "May  2 22:18:20 2022"
+"title" ""
+"analysisList" "()"
+END

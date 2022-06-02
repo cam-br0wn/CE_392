@@ -1,0 +1,245 @@
+
+Spectre (R) Circuit Simulator
+Version 18.1.0.556.isr13 64bit -- 10 Dec 2019
+Copyright (C) 1989-2019 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+User: ckb4640   Host: ras.ece.northwestern.edu   HostID: 69815F07   PID: 2681273
+Memory  available: 7.5196 GB  physical: 16.4205 GB
+Linux   : Red Hat Enterprise Linux release 8.5 (Ootpa)
+CPU Type: Intel(R) Core(TM) i7-9700 CPU @ 3.00GHz
+        Socket: Processors [Frequency]
+        0:       0 [3000.0],  1 [3000.0],  2 [3000.0],  3 [3000.0],  4 [4438.9]
+                 5 [3000.0],  6 [3000.0],  7 [3000.0]
+        
+System load averages (1min, 5min, 15min) : 4.1 %, 3.4 %, 3.5 %
+
+
+Simulating `input.scs' on ras.ece.northwestern.edu at 4:32:49 PM, Mon May 2, 2022 (process id: 2681273).
+Current working directory: /home/ckb4640/CE_392/simulation/test_NAND2/spectre/schematic/netlist
+Command line:
+    /vol/cadence2018/SPECTRE181/tools/bin/spectre -64 input.scs  \
+        +escchars +log ../psf/spectre.out +inter=mpsc  \
+        +mpssession=spectre0_2680034_1 -format psfxl -raw ../psf  \
+        +lqtimeout 900 -maxw 5 -maxn 5
+spectre pid = 2681273
+
+Loading /vol/cadence2018/SPECTRE181/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /vol/cadence2018/SPECTRE181/tools.lnx86/cmi/lib/64bit/5.0/libphilips_o_sh.so ...
+Loading /vol/cadence2018/SPECTRE181/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /vol/cadence2018/SPECTRE181/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /vol/cadence2018/SPECTRE181/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/ckb4640/CE_392/simulation/test_NAND2/spectre/schematic/netlist/input.scs
+Reading file:  /vol/cadence2018/SPECTRE181/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/hspice_nom.include
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/NMOS_VTG.inc
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/PMOS_VTG.inc
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/NMOS_VTL.inc
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/PMOS_VTL.inc
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/NMOS_VTH.inc
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/PMOS_VTH.inc
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/NMOS_THKOX.inc
+Reading file:  /vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/PMOS_THKOX.inc
+Time for NDB Parsing: CPU = 45.309 ms, elapsed = 131.594 ms.
+Time accumulated: CPU = 75.075 ms, elapsed = 131.596 ms.
+Peak resident memory used = 111 Mbytes.
+
+
+Warning from spectre in `NAND2':`I0', during hierarchy flattening.
+    WARNING (SFE-102): "input.scs" 14: Parameter `ld', specified for model `NMOS_VTG' of primitive `bsim4', has been ignored because it is an invalid model parameter. Specify a valid model parameter and rerun the simulation. Type `spectre -h bsim4' to get more information on valid model parameters.
+    WARNING (SFE-102): "input.scs" 16: Parameter `ld', specified for model `NMOS_VTG' of primitive `bsim4', has been ignored because it is an invalid model parameter. Specify a valid model parameter and rerun the simulation. Type `spectre -h bsim4' to get more information on valid model parameters.
+    WARNING (SFE-32): "/vol/eecs391/FreePDK45/ncsu_basekit/models/hspice/tran_models/models_nom/PMOS_VTG.inc" 3: Duplicate specification for parameter `toxref' (using last value specified).
+    WARNING (SFE-102): "input.scs" 18: Parameter `ld', specified for model `PMOS_VTG' of primitive `bsim4', has been ignored because it is an invalid model parameter. Specify a valid model parameter and rerun the simulation. Type `spectre -h bsim4' to get more information on valid model parameters.
+    WARNING (SFE-102): "input.scs" 20: Parameter `ld', specified for model `PMOS_VTG' of primitive `bsim4', has been ignored because it is an invalid model parameter. Specify a valid model parameter and rerun the simulation. Type `spectre -h bsim4' to get more information on valid model parameters.
+
+Time for Elaboration: CPU = 11.882 ms, elapsed = 14.241 ms.
+Time accumulated: CPU = 87.01 ms, elapsed = 145.888 ms.
+Peak resident memory used = 119 Mbytes.
+
+
+Warning from spectre during hierarchy flattening.
+    WARNING (SPECTRE-17101): The value 'psf' specified using the 'checklimitdest' option will no longer be supported in future releases.
+
+
+Time for EDB Visiting: CPU = 355 us, elapsed = 360.012 us.
+Time accumulated: CPU = 87.415 ms, elapsed = 146.297 ms.
+Peak resident memory used = 119 Mbytes.
+
+
+Global user options:
+         psfversion = 1.1.0
+            vabstol = 1e-06
+            iabstol = 1e-12
+               temp = 27
+               gmin = 1e-12
+             rforce = 1
+           maxnotes = 5
+           maxwarns = 5
+             digits = 5
+               cols = 80
+             pivrel = 0.001
+           sensfile = ../psf/sens.output
+     checklimitdest = psf
+               save = allpub
+             reltol = 0.001
+               tnom = 27
+             scalem = 1
+              scale = 1
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 6
+              bsim4 4     
+            vsource 4     
+
+Analysis and control statement inventory:
+               info 7     
+               tran 1     
+
+Output statements:
+             .probe 0     
+           .measure 0     
+               save 1     
+
+Time for parsing: CPU = 1.254 ms, elapsed = 3.49903 ms.
+Time accumulated: CPU = 88.708 ms, elapsed = 149.834 ms.
+Peak resident memory used = 123 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+Entering remote command mode using MPSC service (spectre, ipi, v0.0, spectre0_2680034_1, ).
+
+************************************************
+Transient Analysis `tran': time = (0 s -> 50 ns)
+************************************************
+DC simulation time: CPU = 289 us, elapsed = 290.155 us.
+
+Opening the PSFXL file ../psf/tran.tran.tran ...
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 50 ns
+    step = 50 ps
+    maxstep = 1 ns
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 1 pS
+
+
+Output and IC/nodeset summary:
+                 save   2       (current)
+                 save   6       (voltage)
+
+    tran: time = 1.55 ns      (3.1 %), step = 800 ps        (1.6 %)
+    tran: time = 4.55 ns      (9.1 %), step = 1 ns            (2 %)
+    tran: time = 6.55 ns     (13.1 %), step = 1 ns            (2 %)
+    tran: time = 9.28 ns     (18.6 %), step = 730 ps       (1.46 %)
+
+Notice from spectre at time = 10.4709 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node V2:p.
+Notice from spectre at time = 10.921 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node V2:p.
+Notice from spectre at time = 11.8213 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node V2:p.
+
+    tran: time = 11.82 ns    (23.6 %), step = 900.3 ps      (1.8 %)
+
+Notice from spectre at time = 12.8213 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node V2:p.
+Notice from spectre at time = 13.8213 ns during transient analysis `tran'.
+    Found trapezoidal ringing on node V2:p.
+        Further occurrences of this notice will be suppressed.
+
+    tran: time = 13.82 ns    (27.6 %), step = 1 ns            (2 %)
+    tran: time = 16.82 ns    (33.6 %), step = 1 ns            (2 %)
+    tran: time = 18.82 ns    (37.6 %), step = 1 ns            (2 %)
+    tran: time = 21.51 ns      (43 %), step = 421.2 ps     (842 m%)
+    tran: time = 23.93 ns    (47.9 %), step = 1 ns            (2 %)
+    tran: time = 26.93 ns    (53.9 %), step = 1 ns            (2 %)
+    tran: time = 28.93 ns    (57.9 %), step = 1 ns            (2 %)
+    tran: time = 31.82 ns    (63.6 %), step = 888.3 ps     (1.78 %)
+    tran: time = 33.82 ns    (67.6 %), step = 1 ns            (2 %)
+    tran: time = 36.82 ns    (73.6 %), step = 1 ns            (2 %)
+    tran: time = 38.82 ns    (77.6 %), step = 1 ns            (2 %)
+    tran: time = 41.82 ns    (83.6 %), step = 1 ns            (2 %)
+    tran: time = 43.82 ns    (87.6 %), step = 1 ns            (2 %)
+    tran: time = 46.82 ns    (93.6 %), step = 1 ns            (2 %)
+    tran: time = 48.82 ns    (97.6 %), step = 1 ns            (2 %)
+Number of accepted tran steps =             147
+
+Notice from spectre during transient analysis `tran'.
+    Trapezoidal ringing is detected during tran analysis.
+        Please use method=trap for better results and performance.
+
+
+Maximum value achieved for any signal of each quantity: 
+V: V(Y) = 1.222 V
+I: I(V3:p) = 343.1 uA
+If your circuit contains signals of the same quantity that are vastly different in size (such as high voltage circuitry combined with low voltage control circuitry), you should consider specifying global option `bin_relref=yes'.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -   To further speed up simulation, consider
+          add ++aps on command line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+During simulation, the CPU load for active processors is :
+        Spectre  0 (6.2 %)       3 (5.9 %)       4 (25.0 %)      6 (29.4 %)
+                 7 (12.5 %)     
+        Other   
+Initial condition solution time: CPU = 316 us, elapsed = 315.905 us.
+Intrinsic tran analysis time:    CPU = 7.29 ms, elapsed = 14.745 ms.
+Total time required for tran analysis `tran': CPU = 9.356 ms, elapsed = 21.1589 ms.
+Time accumulated: CPU = 102.934 ms, elapsed = 211.344 ms.
+Peak resident memory used = 126 Mbytes.
+
+
+Notice from spectre.
+    37 notices suppressed.
+
+finalTimeOP: writing operating point information to rawfile.
+
+Opening the PSF file ../psf/finalTimeOP.info ...
+modelParameter: writing model parameter values to rawfile.
+
+Opening the PSF file ../psf/modelParameter.info ...
+element: writing instance parameter values to rawfile.
+
+Opening the PSF file ../psf/element.info ...
+outputParameter: writing output parameter values to rawfile.
+
+Opening the PSF file ../psf/outputParameter.info ...
+designParamVals: writing netlist parameters to rawfile.
+
+Opening the PSFASCII file ../psf/designParamVals.info ...
+primitives: writing primitives to rawfile.
+
+Opening the PSFASCII file ../psf/primitives.info.primitives ...
+subckts: writing subcircuits to rawfile.
+
+Opening the PSFASCII file ../psf/subckts.info.subckts ...
+
+Aggregate audit (4:33:23 PM, Mon May 2, 2022):
+Time used: CPU = 112 ms, elapsed = 33.8 s, util. = 332e-03%.
+Time spent in licensing: elapsed = 14.1 ms.
+Peak memory used = 128 Mbytes.
+Simulation started at: 4:32:49 PM, Mon May 2, 2022, ended at: 4:33:23 PM, Mon May 2, 2022, with elapsed time (wall clock): 33.8 s.
+spectre completes with 0 errors, 6 warnings, and 8 notices.

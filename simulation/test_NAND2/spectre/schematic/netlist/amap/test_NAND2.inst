@@ -1,0 +1,5 @@
+HEADER
+"PSFversion" "1.00"
+"I0n" "NAND2"
+"V1n V0n" "analogLib_vbit_spectre"
+"V3n V2n" "analogLib_vdc_spectre"

@@ -1,0 +1,6 @@
+HEADER
+"PSFversion" "1.00"
+"I0n" "shift_reg"
+"I2n" "sample_data_input"
+"I4n" "clock"
+"V1n V0n" "analogLib_vdc_spectre"

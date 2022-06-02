@@ -1,0 +1,7 @@
+    I11 (clk net12 net15 gnd vdd) NAND2
+    I10 (D clk net14 gnd vdd) NAND2
+    I13 (Q net15 Q_bar gnd vdd) NAND2
+    I12 (net14 Q_bar Q gnd vdd) NAND2
+    I14 (D gnd vdd net12) inverter
+ends DFF_sync
+// End of subcircuit definition.

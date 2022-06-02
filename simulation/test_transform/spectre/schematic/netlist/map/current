@@ -1,0 +1,52 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "test_transform"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/home/ckb4640/CE_392/simulation/test_transform/spectre/schematic/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "sobel_operator/test_transform/schematic" "test_transform" )
+( "sobel_operator/Minus2/schematic" "Minus2" )
+( "sobel_operator/NAND2/schematic" "NAND2" )
+( "sobel_operator/AND2/schematic" "AND2" )
+( "sobel_operator/Shifter/schematic" "Shifter" )
+( "sobel_operator/8bit_reg/schematic" "sobel_operator_8bit_reg_schematic" )
+( "sobel_operator/XOR2/schematic" "XOR2" )
+( "sobel_operator/8bit_RCA/schematic" "sobel_operator_8bit_RCA_schematic" )
+( "sobel_operator/inverter/schematic" "inverter" )
+( "sobel_operator/8bit_one/schematic" "sobel_operator_8bit_one_schematic" )
+( "sobel_operator/full_adder/schematic" "full_adder" )
+( "sobel_operator/clock/schematic" "clock" )
+( "sobel_operator/Transform/schematic" "Transform" )
+( "sobel_operator/sample_data_input/schematic" "sample_data_input" )
+( "sobel_operator/OR2/schematic" "OR2" )
+( "sobel_operator/Minus1/schematic" "Minus1" )
+( "sobel_operator/DFF_sync/schematic" "DFF_sync" )
+( "sobel_operator/shift_reg/schematic" "shift_reg" )
+ )
+( "OR2" "ihnl/cds3/map" )
+( "sobel_operator_8bit_reg_schematic" "ihnl/cds12/map" )
+( "clock" "ihnl/cds15/map" )
+( "XOR2" "ihnl/cds9/map" )
+( "Minus1" "ihnl/cds7/map" )
+( "inverter" "ihnl/cds1/map" )
+( "Minus2" "ihnl/cds8/map" )
+( "AND2" "ihnl/cds2/map" )
+( "sobel_operator_8bit_one_schematic" "ihnl/cds16/map" )
+( "full_adder" "ihnl/cds5/map" )
+( "sobel_operator_8bit_RCA_schematic" "ihnl/cds6/map" )
+( "sample_data_input" "ihnl/cds14/map" )
+( "test_transform" "ihnl/cds17/map" )
+( "NAND2" "ihnl/cds0/map" )
+( "shift_reg" "ihnl/cds13/map" )
+( "DFF_sync" "ihnl/cds11/map" )
+( "Shifter" "ihnl/cds4/map" )
+( "Transform" "ihnl/cds10/map" )
+ )

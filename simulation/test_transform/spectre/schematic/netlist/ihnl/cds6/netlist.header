@@ -1,0 +1,8 @@
+
+// Library name: sobel_operator
+// Cell name: 8bit_RCA
+// View name: schematic
+subckt sobel_operator_8bit_RCA_schematic C_In C_Out Gnd S\<7\> S\<6\> \
+        S\<5\> S\<4\> S\<3\> S\<2\> S\<1\> S\<0\> Vdd a\<7\> a\<6\> a\<5\> \
+        a\<4\> a\<3\> a\<2\> a\<1\> a\<0\> b\<7\> b\<6\> b\<5\> b\<4\> \
+        b\<3\> b\<2\> b\<1\> b\<0\>

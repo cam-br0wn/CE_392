@@ -1,0 +1,18 @@
+    I24 (Vdd In\<7\> Gnd Out\<7\> Vdd) AND2
+    I14 (Vdd In\<3\> Gnd Out\<3\> Vdd) AND2
+    I13 (Vdd In\<0\> Gnd Out\<0\> Vdd) AND2
+    I12 (Vdd In\<1\> Gnd Out\<1\> Vdd) AND2
+    I11 (Vdd In\<2\> Gnd Out\<2\> Vdd) AND2
+    I10 (Vdd In\<4\> Gnd Out\<4\> Vdd) AND2
+    I9 (Vdd In\<5\> Gnd Out\<5\> Vdd) AND2
+    I8 (Vdd In\<6\> Gnd Out\<6\> Vdd) AND2
+    I23 (Vdd Gnd Vdd Out\<15\>) inverter
+    I22 (Vdd Gnd Vdd Out\<14\>) inverter
+    I21 (Vdd Gnd Vdd Out\<13\>) inverter
+    I20 (Vdd Gnd Vdd Out\<12\>) inverter
+    I19 (Vdd Gnd Vdd Out\<11\>) inverter
+    I18 (Vdd Gnd Vdd Out\<10\>) inverter
+    I17 (Vdd Gnd Vdd Out\<9\>) inverter
+    I16 (bit8_bar Gnd Vdd Out\<8\>) inverter
+ends sobel_operator_8bit_to_16bit_schematic
+// End of subcircuit definition.

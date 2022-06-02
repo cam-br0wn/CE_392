@@ -1,0 +1,41 @@
+
+// Library name: sobel_operator
+// Cell name: test_transform
+// View name: schematic
+I7 (C_Out net4 net22\<0\> net22\<1\> net22\<2\> net22\<3\> net22\<4\> \
+        net22\<5\> net22\<6\> net22\<7\> net26\<0\> net26\<1\> net26\<2\> \
+        net26\<3\> net26\<4\> net26\<5\> net26\<6\> net26\<7\> net24\<0\> \
+        net24\<1\> net24\<2\> net24\<3\> net24\<4\> net24\<5\> net24\<6\> \
+        net24\<7\> net21\<0\> net21\<1\> net21\<2\> net21\<3\> net21\<4\> \
+        net21\<5\> net21\<6\> net21\<7\> net25\<0\> net25\<1\> net25\<2\> \
+        net25\<3\> net25\<4\> net25\<5\> net25\<6\> net25\<7\> Out\<7\> \
+        Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> \
+        net23\<0\> net23\<1\> net23\<2\> net23\<3\> net23\<4\> net23\<5\> \
+        net23\<6\> net23\<7\> net1 net27\<0\> net27\<1\> net27\<2\> \
+        net27\<3\> net27\<4\> net27\<5\> net27\<6\> net27\<7\>) Transform
+I1 (net26\<0\> net26\<1\> net26\<2\> net26\<3\> net26\<4\> net26\<5\> \
+        net26\<6\> net26\<7\> net28\<0\> net28\<1\> net28\<2\> net28\<3\> \
+        net28\<4\> net28\<5\> net28\<6\> net28\<7\> net25\<0\> net25\<1\> \
+        net25\<2\> net25\<3\> net25\<4\> net25\<5\> net25\<6\> net25\<7\> \
+        net24\<0\> net24\<1\> net24\<2\> net24\<3\> net24\<4\> net24\<5\> \
+        net24\<6\> net24\<7\> net23\<0\> net23\<1\> net23\<2\> net23\<3\> \
+        net23\<4\> net23\<5\> net23\<6\> net23\<7\> net22\<0\> net22\<1\> \
+        net22\<2\> net22\<3\> net22\<4\> net22\<5\> net22\<6\> net22\<7\> \
+        net29\<0\> net29\<1\> net29\<2\> net29\<3\> net29\<4\> net29\<5\> \
+        net29\<6\> net29\<7\> net21\<0\> net21\<1\> net21\<2\> net21\<3\> \
+        net21\<4\> net21\<5\> net21\<6\> net21\<7\> net20\<0\> net20\<1\> \
+        net20\<2\> net20\<3\> net20\<4\> net20\<5\> net20\<6\> net20\<7\> \
+        net16 net4 net19\<0\> net19\<1\> net19\<2\> net19\<3\> net19\<4\> \
+        net19\<5\> net19\<6\> net19\<7\> net18\<0\> net18\<1\> net18\<2\> \
+        net18\<3\> net18\<4\> net18\<5\> net18\<6\> net18\<7\> net1) \
+        shift_reg
+I2 (net20\<0\> net20\<1\> net20\<2\> net20\<3\> net20\<4\> net20\<5\> \
+        net20\<6\> net20\<7\> net19\<0\> net19\<1\> net19\<2\> net19\<3\> \
+        net19\<4\> net19\<5\> net19\<6\> net19\<7\> net18\<0\> net18\<1\> \
+        net18\<2\> net18\<3\> net18\<4\> net18\<5\> net18\<6\> net18\<7\>) \
+        sample_data_input
+I3 (net16) clock
+I4 (net27\<0\> net27\<1\> net27\<2\> net27\<3\> net27\<4\> net27\<5\> \
+        net27\<6\> net27\<7\>) sobel_operator_8bit_one_schematic
+V1 (net1 0) vsource dc=1.1 type=dc
+V0 (net4 0) vsource dc=0 type=dc

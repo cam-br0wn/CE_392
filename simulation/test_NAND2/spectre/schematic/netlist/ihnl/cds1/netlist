@@ -1,0 +1,11 @@
+
+// Library name: sobel_operator
+// Cell name: test_NAND2
+// View name: schematic
+I0 (A B Y net7 net6) NAND2
+V1 (B 0) vsource val1=1.1 val0=0 delay=10p rise=5p fall=5p period=10n \
+        type=bit data="0101" rptstart=1 rpttimes=0
+V0 (A 0) vsource val1=1.1 val0=0 delay=10p rise=5p fall=5p period=10n \
+        type=bit data="0011" rptstart=1 rpttimes=0
+V3 (net7 0) vsource dc=0 type=dc
+V2 (net6 0) vsource dc=1.1 type=dc

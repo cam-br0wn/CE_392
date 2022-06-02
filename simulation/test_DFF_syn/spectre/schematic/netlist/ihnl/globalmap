@@ -1,0 +1,13 @@
+CADENCE IHNL11140
+$model
+sobel_operator/test_DFF_syn/schematic test_DFF_syn
+sobel_operator/NAND2/schematic NAND2
+sobel_operator/DFF_sync/schematic DFF_sync
+sobel_operator/inverter/schematic inverter
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+vdd vdd
+$endparam

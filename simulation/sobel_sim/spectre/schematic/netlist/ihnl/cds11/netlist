@@ -1,0 +1,123 @@
+    I0 (Gnd Two\<7\> Two\<6\> Two\<5\> Two\<4\> Two\<3\> Two\<2\> Two\<1\> \
+        Two\<0\> net078\<0\> net078\<1\> net078\<2\> net078\<3\> \
+        net078\<4\> net078\<5\> net078\<6\> net078\<7\> net078\<8\> \
+        net078\<9\> net078\<10\> net078\<11\> net078\<12\> net078\<13\> \
+        net078\<14\> net078\<15\> Gnd Vdd) Shifter
+    I1 (net040 Gnd NegTwo\<7\> NegTwo\<6\> NegTwo\<5\> NegTwo\<4\> \
+        NegTwo\<3\> NegTwo\<2\> NegTwo\<1\> NegTwo\<0\> net062\<0\> \
+        net062\<1\> net062\<2\> net062\<3\> net062\<4\> net062\<5\> \
+        net062\<6\> net062\<7\> net062\<8\> net062\<9\> net062\<10\> \
+        net062\<11\> net062\<12\> net062\<13\> net062\<14\> net062\<15\> \
+        Vdd net054\<0\> net054\<1\> net054\<2\> net054\<3\> net054\<4\> \
+        net054\<5\> net054\<6\> net054\<7\> net054\<8\> net054\<9\> \
+        net054\<10\> net054\<11\> net054\<12\> net054\<13\> net054\<14\> \
+        net054\<15\>) Minus2
+    I20 (net030 Gnd net075\<0\> net075\<1\> net075\<2\> net075\<3\> \
+        net075\<4\> net075\<5\> net075\<6\> net075\<7\> net075\<8\> \
+        net075\<9\> net075\<10\> net075\<11\> net075\<12\> net075\<13\> \
+        net075\<14\> net075\<15\> net074\<0\> net074\<1\> net074\<2\> \
+        net074\<3\> net074\<4\> net074\<5\> net074\<6\> net074\<7\> \
+        net074\<8\> net074\<9\> net074\<10\> net074\<11\> net074\<12\> \
+        net074\<13\> net074\<14\> net074\<15\> Vdd net054\<0\> net054\<1\> \
+        net054\<2\> net054\<3\> net054\<4\> net054\<5\> net054\<6\> \
+        net054\<7\> net054\<8\> net054\<9\> net054\<10\> net054\<11\> \
+        net054\<12\> net054\<13\> net054\<14\> net054\<15\>) Minus1
+    I21 (net59 Gnd net069\<0\> net069\<1\> net069\<2\> net069\<3\> \
+        net069\<4\> net069\<5\> net069\<6\> net069\<7\> net069\<8\> \
+        net069\<9\> net069\<10\> net069\<11\> net069\<12\> net069\<13\> \
+        net069\<14\> net069\<15\> net065\<0\> net065\<1\> net065\<2\> \
+        net065\<3\> net065\<4\> net065\<5\> net065\<6\> net065\<7\> \
+        net065\<8\> net065\<9\> net065\<10\> net065\<11\> net065\<12\> \
+        net065\<13\> net065\<14\> net065\<15\> Vdd net054\<0\> net054\<1\> \
+        net054\<2\> net054\<3\> net054\<4\> net054\<5\> net054\<6\> \
+        net054\<7\> net054\<8\> net054\<9\> net054\<10\> net054\<11\> \
+        net054\<12\> net054\<13\> net054\<14\> net054\<15\>) Minus1
+    I17 (net60 net44 Gnd net047 Vdd) XOR2
+    I18 (net40 net040 Gnd net046 Vdd) XOR2
+    I19 (net030 net59 Gnd net034 Vdd) XOR2
+    I31 (Gnd One_B\<7\> One_B\<6\> One_B\<5\> One_B\<4\> One_B\<3\> \
+        One_B\<2\> One_B\<1\> One_B\<0\> net089\<0\> net089\<1\> \
+        net089\<2\> net089\<3\> net089\<4\> net089\<5\> net089\<6\> \
+        net089\<7\> net089\<8\> net089\<9\> net089\<10\> net089\<11\> \
+        net089\<12\> net089\<13\> net089\<14\> net089\<15\> Vdd Vdd) \
+        sobel_operator_8bit_to_16bit_schematic
+    I30 (Gnd One_A\<7\> One_A\<6\> One_A\<5\> One_A\<4\> One_A\<3\> \
+        One_A\<2\> One_A\<1\> One_A\<0\> net063\<0\> net063\<1\> \
+        net063\<2\> net063\<3\> net063\<4\> net063\<5\> net063\<6\> \
+        net063\<7\> net063\<8\> net063\<9\> net063\<10\> net063\<11\> \
+        net063\<12\> net063\<13\> net063\<14\> net063\<15\> Vdd Vdd) \
+        sobel_operator_8bit_to_16bit_schematic
+    I24 (Gnd NegOne_A\<7\> NegOne_A\<6\> NegOne_A\<5\> NegOne_A\<4\> \
+        NegOne_A\<3\> NegOne_A\<2\> NegOne_A\<1\> NegOne_A\<0\> \
+        net075\<0\> net075\<1\> net075\<2\> net075\<3\> net075\<4\> \
+        net075\<5\> net075\<6\> net075\<7\> net075\<8\> net075\<9\> \
+        net075\<10\> net075\<11\> net075\<12\> net075\<13\> net075\<14\> \
+        net075\<15\> Vdd Vdd) sobel_operator_8bit_to_16bit_schematic
+    I23 (Gnd NegOne_B\<7\> NegOne_B\<6\> NegOne_B\<5\> NegOne_B\<4\> \
+        NegOne_B\<3\> NegOne_B\<2\> NegOne_B\<1\> NegOne_B\<0\> \
+        net069\<0\> net069\<1\> net069\<2\> net069\<3\> net069\<4\> \
+        net069\<5\> net069\<6\> net069\<7\> net069\<8\> net069\<9\> \
+        net069\<10\> net069\<11\> net069\<12\> net069\<13\> net069\<14\> \
+        net069\<15\> Vdd Vdd) sobel_operator_8bit_to_16bit_schematic
+    I22 (Gnd one\<7\> one\<6\> one\<5\> one\<4\> one\<3\> one\<2\> \
+        one\<1\> one\<0\> net054\<0\> net054\<1\> net054\<2\> net054\<3\> \
+        net054\<4\> net054\<5\> net054\<6\> net054\<7\> net054\<8\> \
+        net054\<9\> net054\<10\> net054\<11\> net054\<12\> net054\<13\> \
+        net054\<14\> net054\<15\> Vdd Vdd) \
+        sobel_operator_8bit_to_16bit_schematic
+    I27 (net073\<0\> net073\<1\> net073\<2\> net073\<3\> net073\<4\> \
+        net073\<5\> net073\<6\> net073\<7\> net073\<8\> net073\<9\> \
+        net073\<10\> net073\<11\> net073\<12\> net073\<13\> net073\<14\> \
+        net073\<15\> net070\<0\> net070\<1\> net070\<2\> net070\<3\> \
+        net070\<4\> net070\<5\> net070\<6\> net070\<7\> net070\<8\> \
+        net070\<9\> net070\<10\> net070\<11\> net070\<12\> net070\<13\> \
+        net070\<14\> net070\<15\> C_Out net047 Gnd Out\<15\> Out\<14\> \
+        Out\<13\> Out\<12\> Out\<11\> Out\<10\> Out\<9\> Out\<8\> Out\<7\> \
+        Out\<6\> Out\<5\> Out\<4\> Out\<3\> Out\<2\> Out\<1\> Out\<0\> \
+        Vdd) sobel_operator_16bit_RCA_schematic
+    I25 (net067\<0\> net067\<1\> net067\<2\> net067\<3\> net067\<4\> \
+        net067\<5\> net067\<6\> net067\<7\> net067\<8\> net067\<9\> \
+        net067\<10\> net067\<11\> net067\<12\> net067\<13\> net067\<14\> \
+        net067\<15\> net062\<0\> net062\<1\> net062\<2\> net062\<3\> \
+        net062\<4\> net062\<5\> net062\<6\> net062\<7\> net062\<8\> \
+        net062\<9\> net062\<10\> net062\<11\> net062\<12\> net062\<13\> \
+        net062\<14\> net062\<15\> net44 net046 Gnd net070\<0\> net070\<1\> \
+        net070\<2\> net070\<3\> net070\<4\> net070\<5\> net070\<6\> \
+        net070\<7\> net070\<8\> net070\<9\> net070\<10\> net070\<11\> \
+        net070\<12\> net070\<13\> net070\<14\> net070\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+    I26 (net065\<0\> net065\<1\> net065\<2\> net065\<3\> net065\<4\> \
+        net065\<5\> net065\<6\> net065\<7\> net065\<8\> net065\<9\> \
+        net065\<10\> net065\<11\> net065\<12\> net065\<13\> net065\<14\> \
+        net065\<15\> net074\<0\> net074\<1\> net074\<2\> net074\<3\> \
+        net074\<4\> net074\<5\> net074\<6\> net074\<7\> net074\<8\> \
+        net074\<9\> net074\<10\> net074\<11\> net074\<12\> net074\<13\> \
+        net074\<14\> net074\<15\> net40 net034 Gnd net067\<0\> net067\<1\> \
+        net067\<2\> net067\<3\> net067\<4\> net067\<5\> net067\<6\> \
+        net067\<7\> net067\<8\> net067\<9\> net067\<10\> net067\<11\> \
+        net067\<12\> net067\<13\> net067\<14\> net067\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+    I29 (net077\<0\> net077\<1\> net077\<2\> net077\<3\> net077\<4\> \
+        net077\<5\> net077\<6\> net077\<7\> net077\<8\> net077\<9\> \
+        net077\<10\> net077\<11\> net077\<12\> net077\<13\> net077\<14\> \
+        net077\<15\> net078\<0\> net078\<1\> net078\<2\> net078\<3\> \
+        net078\<4\> net078\<5\> net078\<6\> net078\<7\> net078\<8\> \
+        net078\<9\> net078\<10\> net078\<11\> net078\<12\> net078\<13\> \
+        net078\<14\> net078\<15\> net60 net38 Gnd net073\<0\> net073\<1\> \
+        net073\<2\> net073\<3\> net073\<4\> net073\<5\> net073\<6\> \
+        net073\<7\> net073\<8\> net073\<9\> net073\<10\> net073\<11\> \
+        net073\<12\> net073\<13\> net073\<14\> net073\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+    I28 (net063\<0\> net063\<1\> net063\<2\> net063\<3\> net063\<4\> \
+        net063\<5\> net063\<6\> net063\<7\> net063\<8\> net063\<9\> \
+        net063\<10\> net063\<11\> net063\<12\> net063\<13\> net063\<14\> \
+        net063\<15\> net089\<0\> net089\<1\> net089\<2\> net089\<3\> \
+        net089\<4\> net089\<5\> net089\<6\> net089\<7\> net089\<8\> \
+        net089\<9\> net089\<10\> net089\<11\> net089\<12\> net089\<13\> \
+        net089\<14\> net089\<15\> net38 Gnd Gnd net077\<0\> net077\<1\> \
+        net077\<2\> net077\<3\> net077\<4\> net077\<5\> net077\<6\> \
+        net077\<7\> net077\<8\> net077\<9\> net077\<10\> net077\<11\> \
+        net077\<12\> net077\<13\> net077\<14\> net077\<15\> Vdd) \
+        sobel_operator_16bit_RCA_schematic
+ends Transform
+// End of subcircuit definition.

@@ -1,0 +1,8 @@
+
+// Library name: sobel_operator
+// Cell name: 8bit_reg
+// View name: schematic
+subckt sobel_operator_8bit_reg_schematic D\<7\> D\<6\> D\<5\> D\<4\> \
+        D\<3\> D\<2\> D\<1\> D\<0\> Q\<7\> Q\<6\> Q\<5\> Q\<4\> Q\<3\> \
+        Q\<2\> Q\<1\> Q\<0\> Q_bar\<7\> Q_bar\<6\> Q_bar\<5\> Q_bar\<4\> \
+        Q_bar\<3\> Q_bar\<2\> Q_bar\<1\> Q_bar\<0\> clk gnd vdd
